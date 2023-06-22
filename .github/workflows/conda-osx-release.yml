@@ -27,7 +27,7 @@ jobs:
           mamba-version: "*"
           channels: conda-forge,bioconda,defaults
           auto-activate-base: false
-          activate-environment: osx-build.yaml
+          activate-environment: anaconda-client
           environment-file: envs/osx-build.yaml
 
       - name: check solution
