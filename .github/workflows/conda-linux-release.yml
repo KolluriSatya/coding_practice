@@ -1,4 +1,4 @@
-name: conda-linux-release
+gitname: conda-linux-release
 on:
   push:
     # Sequence of patterns matched against refs/tags
