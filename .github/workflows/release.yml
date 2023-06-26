@@ -5,25 +5,16 @@ on:
       - 'v*' # Push events to matching v*, i.e. v1.0, v20.15.10
 
 name: Create Release name
-
 jobs:
-  build:
-    name: Create Release
+  auto-tag-release:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout code
+      - name: Check out repository
         uses: actions/checkout@v2
-      - name: Create Release
-        id: create_release
-        uses: actions/create-release@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.PERSONAL_TOKEN }} # This token is provided by Actions, you do not need to create your own token
+      - name: Release new versions using AutoTagBot
+        uses: snapserv/action-autotagbot@master
         with:
-          tag_name: ${{ github.ref }}
-          release_name: Release ${{ github.ref }}
-          body: |
-            Changes in this Release
-            - First Change
-            - Second Change
-          draft: false
-          prerelease: false
+          api_token: '${{ secrets.GITHUB_TOKEN }}'
+          source_file: 'version.h'
+          version_pattern: 'CCPHYLO_VERSION\s*"(?<version>[0-9.]+)"'
+          tag_format: 'v{version}'
