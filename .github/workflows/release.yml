@@ -1,20 +1,22 @@
+name: AutoTagBot
 on:
   push:
     branches:
-      - main
+      - master
     paths:
       - version.h
-name: version on git
+
 jobs:
-  auto-tag-release:
+  auto-tag-bot:
     runs-on: ubuntu-latest
     steps:
       - name: Check out repository
         uses: actions/checkout@v2
+
       - name: Release new versions using AutoTagBot
         uses: snapserv/action-autotagbot@master
         with:
           api_token: '${{ secrets.PERSONAL_TOKEN }}'
           source_file: 'version.h'
-          version_pattern: 'CCPHYLO_VERSION\s*"(?<version>[0-9.]+)"'
+          version_pattern: '"CCPHYLO_VERSION"\s*"(?<version>[0-9.]+)"'
           tag_format: 'v{version}'
