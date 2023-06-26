@@ -3,8 +3,7 @@ on:
     # Sequence of patterns matched against refs/tags
     tags:
       - 'v*' # Push events to matching v*, i.e. v1.0, v20.15.10
-
-name: version naming
+name: version naming update
 jobs:
   auto-tag-release:
     runs-on: ubuntu-latest
