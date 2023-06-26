@@ -1,6 +1,7 @@
 on:
   push:
-    # Sequence of patterns matched against refs/tags
+    branches:
+      - main
     paths:
       - version.h
 name: version on git
