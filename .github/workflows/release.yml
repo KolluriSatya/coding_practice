@@ -2,7 +2,7 @@ name: AutoTagBot
 on:
   push:
     branches:
-      - master
+      - main
     paths:
       - version.h
 
