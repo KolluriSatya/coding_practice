@@ -23,7 +23,7 @@ requirements:
     - ccphylo >=0.8.2
 about:
   home: https://bitbucket.org/genomicepidemiology/mintyper
-  summary: 'Mintyper is a tool designed to quickly estimate a distance matrix from a set of input sequencing reads. It can take both short read from Illumina's sequencing platforms and long reads from Oxford Nanopore's platform.'                                                                                                                    '
+  summary: 'Mintyper is a tool designed to quickly estimate a distance matrix from a set of input sequencing reads. It can take both short read from Illumina's sequencing platforms and long reads from Oxford Nanopore's platform.'
   license: Apache-2.0
 extra:
   identifiers:
