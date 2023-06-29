@@ -1,9 +1,11 @@
 name: osx-build
 channels:
-  - conda-forge
-  - bioconda
+  - satyakp
 dependencies:
   - mamba
-  - python
+  - python=3.9
+  - kma=1.4.9
+  - pip
+  - ccphylo=0.8.2
   - boa
   - anaconda-client
