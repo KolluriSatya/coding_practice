@@ -1,9 +1,9 @@
 package:
-  name: Mintyper
-  version: 0.0.3
+  name: mintyper
+  version: 0.1.0
 
 source:
-  url: https://bitbucket.org/genomicepidemiology/mintyper/archive/refs/tags/v1.0.11.tar.gz
+  url: https://github.com/genomicepidemiology/mintyper/archive/refs/tags/v0.1.0.tar.gz
 
 build:
   number: 0
@@ -12,16 +12,15 @@ build:
 
 requirements:
   host:
-    - python >=3.9
+    - python >=3.6
     - pip
     - kma >=1.4.9
     - ccphylo >=0.8.2
   run:
-    - python >=3.9
-    - pip
-    - kma>=1.4.9
+    - python >=3.6
+    - kma >=1.4.9
     - ccphylo >=0.8.2
 about:
-  home: https://bitbucket.org/genomicepidemiology/mintyper
-  summary: 'Mintyper is a tool designed to quickly estimate a distance matrix from a set of input sequencing reads. It can take both short read from Illumina's sequencing platforms and long reads from Oxford Nanopore's platform.'
+  home: https://github.com/genomicepidemiology/mintyper
+  summary: 'mintyper test.'
   license: Apache-2.0
