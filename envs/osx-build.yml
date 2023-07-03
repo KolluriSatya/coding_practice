@@ -4,11 +4,6 @@ channels:
   - bioconda
 dependencies:
   - mamba
-  - python >=3
+  - python
   - boa
   - anaconda-client
-  - kma
-  - biopython
-  - tabulate
-  - cgecore
-  - blast
