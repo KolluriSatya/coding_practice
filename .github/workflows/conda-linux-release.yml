@@ -17,3 +17,4 @@ jobs:
           channels: '-c conda-forge -c bioconda -c defaults'
           AnacondaToken: ${{ secrets.SATYA_CONDA_AUTH_TOKEN }}
           publish: true
+          test_all: true
