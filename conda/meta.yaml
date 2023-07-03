@@ -22,8 +22,12 @@ requirements:
     - blast
 
 test:
+  imports:
+    - click
+  requires:
+    - pip
   commands:
-    - plasmidfinder.py --help
+    - plasmidfinder.py -h | grep plasmidfinder.py >/dev/null
 
 about:
   home: https://bitbucket.org/genomicepidemiology/plasmidfinder
