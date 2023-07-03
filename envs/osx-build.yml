@@ -3,7 +3,7 @@ channels:
   - conda-forge
   - bioconda
 dependencies:
-  - mamba
+  - mamba=0.14.1
   - python
-  - boa
+  - boa=0.5.0
   - anaconda-client
