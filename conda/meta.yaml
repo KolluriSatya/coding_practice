@@ -17,6 +17,7 @@ requirements:
     - ccphylo >=0.8.2
   run:
     - python >=3.6
+    - pip
     - kma >=1.4.9
     - ccphylo >=0.8.2
 about:
