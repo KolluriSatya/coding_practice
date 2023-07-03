@@ -4,7 +4,7 @@ channels:
   - bioconda
 dependencies:
   - mamba
-  - python
+  - python >=3
   - anaconda-client
   - kma
   - biopython
