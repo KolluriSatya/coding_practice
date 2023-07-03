@@ -4,6 +4,7 @@ package:
 
 source:
   url: https://bitbucket.org/genomicepidemiology/plasmidfinder/get/2.1.6.tar.gz
+  noarch: generic
 
 build:
   number: 1

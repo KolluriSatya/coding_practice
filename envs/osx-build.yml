@@ -1,9 +1,0 @@
-name: osx-build
-channels:
-  - conda-forge
-  - bioconda
-dependencies:
-  - mamba=0.14.1
-  - python
-  - boa=0.5.0
-  - anaconda-client
