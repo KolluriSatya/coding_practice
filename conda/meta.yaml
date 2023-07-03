@@ -3,7 +3,7 @@ package:
   version: 0.1.0
 
 source:
-  url: https://bitbucket.org/genomicepidemiology/mintyper
+  url: https://bitbucket.org/genomicepidemiology/mintyper/get/0.1.0.tar.gz
 
 build:
   noarch: python
