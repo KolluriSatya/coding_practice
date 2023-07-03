@@ -5,6 +5,7 @@ channels:
 dependencies:
   - mamba
   - python >=3
+  - boa
   - anaconda-client
   - kma
   - biopython
