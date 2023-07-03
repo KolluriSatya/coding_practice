@@ -7,7 +7,7 @@ source:
 
 build:
   number: 0
-  script: "{{ python }} -m pip install -r setup.py"
+  script: {{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv
 
 requirements:
   host:
