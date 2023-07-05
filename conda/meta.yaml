@@ -3,10 +3,11 @@ package:
   version: 2.1.6
 
 source:
-  url: https://bitbucket.org/genomicepidemiology/plasmidfinder/get/2.1.6.tar.gz
+  url: https://bitbucket.org/genomicepidemiology/PlasmidFinder/get/2.1.6.tar.gz
 
 build:
   number: 1
+  noarch: python
 
 requirements:
   host:
@@ -22,17 +23,13 @@ requirements:
     - blast
 
 test:
-  imports:
-    - click
-  requires:
-    - pip
   commands:
     - plasmidfinder.py -h | grep plasmidfinder.py >/dev/null
 
 about:
   home: https://bitbucket.org/genomicepidemiology/plasmidfinder
   license: Apache-2.0
-  summary: "PlasmidFinder allows identification of plasmids in total or partial sequenced isolates of bacteria."
+  summary: "PlasmidFinder test."
 
 extra:
   identifiers:
