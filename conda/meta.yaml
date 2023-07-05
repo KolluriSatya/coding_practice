@@ -7,24 +7,20 @@ source:
 
 build:
   number: 1
-  noarch: python
-  script: "{{ PYTHON }} -m pip install . --no-deps --ignore-installed -vvv"
+  noarch: generic
 
 requirements:
-  build:
-    - python>=3.5
-    - pip
-    - biopython=1.73
-    - tabulate=0.7.7
-    - cgecore=1.5.5
   host:
     - python>=3.5
-    - pip
-    - biopython=1.73
-    - tabulate=0.7.7
-    - cgecore=1.5.5
+    - kma
+    - wget
   run:
     - python>=3.5
+    - kma
+    - biopython
+    - tabulate
+    - cgecore
+    - blast
 test:
   commands:
     - plasmidfinder.py -h | grep plasmidfinder.py >/dev/null
