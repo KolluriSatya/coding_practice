@@ -8,20 +8,23 @@ source:
 build:
   number: 1
   noarch: python
+  script: "{{ PYTHON }} -m pip install . --no-deps --ignore-installed -vvv"
 
 requirements:
+  build:
+    - python>=3.5
+    - pip
+    - biopython=1.73
+    - tabulate=0.7.7
+    - cgecore=1.5.5
   host:
-    - python >=3
-    - kma
-    - wget
+    - python>=3.5
+    - pip
+    - biopython=1.73
+    - tabulate=0.7.7
+    - cgecore=1.5.5
   run:
-    - python >=3
-    - kma
-    - biopython
-    - tabulate
-    - cgecore
-    - blast
-
+    - python>=3.5
 test:
   commands:
     - plasmidfinder.py -h | grep plasmidfinder.py >/dev/null
@@ -30,7 +33,3 @@ about:
   home: https://bitbucket.org/genomicepidemiology/plasmidfinder
   license: Apache-2.0
   summary: "PlasmidFinder test."
-
-extra:
-  identifiers:
-    - doi:10.1128/AAC.02412-14
