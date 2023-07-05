@@ -10,12 +10,12 @@ chmod +x plasmidfinder.py
 cp plasmidfinder.py ${PREFIX}/bin/plasmidfinder.py
 
 # copy script to download database
-chmod +x ${RECIPE_DIR}/plasmidfinder-db.sh
-cp ${RECIPE_DIR}/plasmidfinder-db.sh ${PREFIX}/bin/plasmidfinder-db.sh
+chmod +x ${RECIPE_DIR}/download-db.sh
+cp ${RECIPE_DIR}/download-db.sh ${PREFIX}/bin/download-db.sh
 
 # Build database
 mkdir -p ${PLASMIDFINDER_DB}
-bash -x ${PREFIX}/bin/plasmidfinder-db.sh ${PLASMIDFINDER_DB}
+bash -x ${PREFIX}/bin/download-db.sh ${PLASMIDFINDER_DB}
 
 # set PLASMID_DB variable on env activation
 mkdir -p ${PREFIX}/etc/conda/activate.d ${PREFIX}/etc/conda/deactivate.d
