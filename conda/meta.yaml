@@ -14,13 +14,14 @@ requirements:
   host:
     - python=2.7
     - scipy
-    - numpy
+    - numpy=1.15
     - ete3
     - joblib
 
   run:
     - python=2.7
     - scipy
+    - numpy=1.15
     - ete3
     - joblib
 test:
