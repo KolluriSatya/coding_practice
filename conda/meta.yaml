@@ -11,14 +11,14 @@ build:
   script: conda env create --file evergreen/scripts/environment.yml
 
 requirements:
-  build:
+  host:
     - python=2.7
     - scipy
     - numpy
     - ete3
     - joblib
 
-  host:
+  run:
     - python=2.7
     - scipy
     - ete3
