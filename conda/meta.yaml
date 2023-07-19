@@ -21,7 +21,6 @@ requirements:
   host:
     - python=2.7
     - scipy
-    - numpy
     - ete3
     - joblib
 test:
