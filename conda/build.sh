@@ -1,7 +1,9 @@
-BINARIES="kma kma_index kma_shm kma_update"
-make CFLAGS="-w -O3 -I$PREFIX/include -L$PREFIX/lib"
+#!/bin/bash
 
 mkdir -p ${PREFIX}/bin
-cp $BINARIES $PREFIX/bin
-mkdir -p $PREFIX/doc/kma
-cp README.md $PREFIX/doc/kma/
+
+conda env create --file evergreen/scripts/environment.yml
+
+# copy script to download database
+chmod +x ${RECIPE_DIR}/download-evergreen-db.sh
+cp ${RECIPE_DIR}/download-evergreen-db.sh ${PREFIX}/bin/download-evergreen-db.sh

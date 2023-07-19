@@ -1,30 +1,35 @@
 package:
-  name: kma
-  version: 1.4.9
+  name: evergreen
+  version: 1.0.0
 
 source:
-  url: https://bitbucket.org/genomicepidemiology/kma/get/1.4.9.tar.gz
+  - url: https://bitbucket.org/genomicepidemiology/evergreen/get/1.0.0.tar.gz
 
 build:
   number: 0
+  noarch: generic
 
 requirements:
   build:
-    - make
-    - {{ compiler('c') }}
+    - Anaconda Python 2.7
+    - Joblib package 0.13+
+    - ETE3 package 3.0+
+    - KMA 1.3.28
+    - IQ-tree 1.6
+    - PHYLIP package 3.697
   host:
-    - zlib
-  run:
-    - zlib
+    - Anaconda Python 2.7
+    - Joblib package 0.13+
+    - ETE3 package 3.0+
+    - KMA 1.3.28
+    - IQ-tree 1.6
+    - PHYLIP package 3.697
 
 test:
   commands:
-    - kma -h | grep KMA >/dev/null
+    - parallel_snp_pipeline.py -h | grep parallel_snp_pipeline.py >/dev/null
 
 about:
-  home: https://bitbucket.org/genomicepidemiology/kma
-  summary: 'KMA is mapping a method designed to map raw reads directly against redundant databases, in an ultra-fast manner using seed and extend.'
+  home: https://bitbucket.org/genomicepidemiology/evergreen
+  summary: 'The Evergreen SNP phylogenic pipeline is for the purpose of continuous phylogenetical analysis of bacterial whole-genome sequencing data.'
   license: Apache-2.0
-extra:
-  identifiers:
-    - doi:10.1186/s12859-018-2336-6
