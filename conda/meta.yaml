@@ -3,7 +3,7 @@ package:
   version: 1.0.0
 
 source:
-  - url: https://bitbucket.org/genomicepidemiology/evergreen/get/1.0.0.tar.gz
+   url: https://bitbucket.org/genomicepidemiology/evergreen.git
 
 build:
   number: 0
