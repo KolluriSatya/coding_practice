@@ -11,8 +11,6 @@ build:
   script: "{{ PYTHON }} -m pip install . --no-deps --ignore-installed -vvv"
 
 requirements:
-  build:
-    - make
   host:
     - python=2.7
     - scipy
