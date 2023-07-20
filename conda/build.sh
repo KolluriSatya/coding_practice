@@ -5,6 +5,8 @@ sed -i "s=BIOCONDA_SED_REPLACE=$HR_DATABASE=" parallel_snp_pipeline.py
 
 #copy evergreen
 mkdir -p ${PREFIX}/bin
+cd ..
+cd scripts
 chmod +x parallel_snp_pipeline.py
 cp parallel_snp_pipeline.py ${PREFIX}/bin/parallel_snp_pipeline.py
 
