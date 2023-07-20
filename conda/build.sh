@@ -2,8 +2,8 @@
 
 mkdir -p ${PREFIX}/bin
 
-chmod +x parallel_snp_pipeline.py
-cp parallel_snp_pipeline.py ${PREFIX}/bin/parallel_snp_pipeline.py
+chmod +x /home/satya/coding_practice/scripts/parallel_snp_pipeline.py
+cp /home/satya/coding_practice/scripts/parallel_snp_pipeline.py ${PREFIX}/bin/parallel_snp_pipeline.py
 
 # copy script to download database
 chmod +x ${RECIPE_DIR}/download-evergreen-db.sh
