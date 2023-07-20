@@ -1,7 +1,7 @@
 #!/bin/bash
 
 HR_DATABASE=${PREFIX}/share/${PKG_NAME}-${PKG_VERSION}/database
-sed -i ="s=BIOCONDA_SED_REPLACE=$HR_DATABASE=" parallel_snp_pipeline.py
+sed -i "s=BIOCONDA_SED_REPLACE=$HR_DATABASE=" parallel_snp_pipeline.py
 
 #copy evergreen
 mkdir -p ${PREFIX}/bin
