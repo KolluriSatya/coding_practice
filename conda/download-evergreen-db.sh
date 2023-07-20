@@ -7,11 +7,8 @@ mkdir results_db
 mkdir output
 mkdir logs
 
-mkdir cgmlstfinder_db
-cd cgmlstfinder_db
-
 wget https://cge.food.dtu.dk/services/Evergreen/etc/database.tar.gz
-tar -xzf database.tar.gz
+tar -xzf database.tar.gz --strip-components 1
 
 # KMA database with default homology reduction settings
 mkdir hr_database
