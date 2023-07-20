@@ -1,9 +1,9 @@
-BINARIES="evergreen"
-make CFLAGS="-w -O3 -I$PREFIX/include -L$PREFIX/lib"
+#!/bin/bash
 
-mkdir -p ${PREFIX}/bin
-cp $BINARIES $PREFIX/bin
-mkdir -p $PREFIX/doc/evergreen/scripts
+mkdir -p ${PREFIX}/bin/scripts
+
+chmod +x ../scripts/parallel_snp_pipeline.py
+cp ../scripts/parallel_snp_pipeline.py  ${PREFIX}/bin/parallel_snp_pipeline.py
 
 # copy script to download database
 chmod +x ${RECIPE_DIR}/download-evergreen-db.sh
