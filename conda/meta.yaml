@@ -10,6 +10,8 @@ build:
   noarch: python
 
 requirements:
+  build:
+    - make
   host:
     - python=2.7
     - scipy

@@ -3,8 +3,7 @@ make CFLAGS="-w -O3 -I$PREFIX/include -L$PREFIX/lib"
 
 mkdir -p ${PREFIX}/bin
 cp $BINARIES $PREFIX/bin
-mkdir -p $PREFIX/doc/evergreen
-cp README.md $PREFIX/doc/evergreen/
+mkdir -p $PREFIX/doc/evergreen/scripts
 
 # copy script to download database
 chmod +x ${RECIPE_DIR}/download-evergreen-db.sh
