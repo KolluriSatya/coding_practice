@@ -1,5 +1,5 @@
-#!/bin/bash
-
-mkdir -p $PREFIX/bin
-cp $SRC_DIR/home/satya/coding_practice/scripts/* $PREFIX/bin/
+BINARIES="parallel_snp_pipeline"
+make CFLAGS=="-w -O3 -I$PREFIX/include -L$PREFIX/lib"
+mkdir -p ${PREFIX}/bin
+cp $BINARIES $PREFIX/bin
 
