@@ -13,6 +13,8 @@ requirements:
     - make
     - {{ compiler('c') }}
   host:
+    - wget
+    - zlib
     - python=2.7
     - scipy
     - numpy=1.15
@@ -20,6 +22,7 @@ requirements:
     - joblib
     - kma=1.3.28
   run:
+    - zlib
     - python=2.7
     - scipy
     - numpy=1.15
