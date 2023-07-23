@@ -1,4 +1,4 @@
-BINARIES= "parallel_snp_pipeline"
+BINARIES= "parallel_snp_pipeline.py"
 make CFLAGS="-w -03 -PREFIX/include -L$PREFIX/lib"
 mkdir -p ${PREFIX}/bin
 cp $BINARIES ${PREFIX}/bin
