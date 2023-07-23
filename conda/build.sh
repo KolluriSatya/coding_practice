@@ -1,6 +1,7 @@
-BINARIES= "parallel_snp_pipeline.py"
-make CFLAGS="-w -03 -PREFIX/include -L$PREFIX/lib"
+#!/bin/bash
+
 mkdir -p ${PREFIX}/bin
-cp $BINARIES ${PREFIX}/bin
-mkdir -p $PREFIX/doc/evergreen
+chmod +x parallel_snp_pipeline.py
+
+cp parallel_snp_pipeline.py ${PREFIX}/bin/parallel_snp_pipeline.py
 
