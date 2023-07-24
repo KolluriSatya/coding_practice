@@ -13,6 +13,6 @@ setup(
     license='',
     install_requires=(),
     author='Malte B. Hallgren',
-    scripts=['scripts/parallel_snp_pipeline.py'],
+    scripts=['bin/parallel_snp_pipeline.py'],
     description='evergreen',
 )
