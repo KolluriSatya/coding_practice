@@ -5,7 +5,7 @@ WORKDIR /app
 # Create the environment:
 COPY environment.yml .
 
-RUN conda env create -f environment.yml
+RUN conda env create --file environment.yml
 
 # Override default shell and use bash
 SHELL ["conda", "run", "-n", "evergreen", "/bin/bash", "-c"]
