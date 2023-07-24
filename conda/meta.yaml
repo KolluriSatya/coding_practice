@@ -8,12 +8,9 @@ source:
 build:
   number: 0
   noarch: python
-  script: conda env create --file evergreen/scripts/environment.yml
+  script: "{{ PYTHON }} -m pip install . --no-deps --ignore-installed -vvv"
 
 requirements:
-  build:
-    - make
-    - {{ compiler('c') }}
   host:
     - wget
     - zlib
