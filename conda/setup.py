@@ -1,7 +1,7 @@
 from setuptools import setup
 if __name__ == '__main__':
 
-setup(
+ setup(
     name='evergreen',
     packages=find_packages(),
     data_files=[],
