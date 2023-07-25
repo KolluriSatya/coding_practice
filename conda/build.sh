@@ -2,6 +2,6 @@
 
 # Copy plasmidfinder
 mkdir -p ${PREFIX}/bin
-chmod +x env.yml
-cp env.yml ${PREFIX}/bin/env.yml
+chmod +x meta.yaml
+cp meta.yaml ${PREFIX}/bin/meta.yaml
 
