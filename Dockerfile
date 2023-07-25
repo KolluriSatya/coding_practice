@@ -1,10 +1,10 @@
 FROM continuumio/miniconda3
 
-WORKDIR /app
+WORKDIR /usr/src/scripts
 
 # Create the environment:
 COPY environment.yml .
-
+RUN pip freeze > environment.yml
 RUN conda env create --file environment.yml
 
 # Override default shell and use bash
