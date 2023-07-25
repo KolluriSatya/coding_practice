@@ -1,6 +1,6 @@
 FROM continuumio/miniconda3
 
-WORKDIR /scripts
+WORKDIR /home/satya/coding_practice/scripts
 
 # Create the environment:
 COPY environment.yml .
