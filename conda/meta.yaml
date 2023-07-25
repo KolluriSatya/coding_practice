@@ -6,10 +6,8 @@ source:
    url: https://bitbucket.org/genomicepidemiology/evergreen.git
 
 build:
-  number: 0
+  number: 1
   noarch: python
-  script: pip freeze > environment.yml
-  script: "{{ PYTHON }} -m pip install coding_practice/scripts/environment.yml --no-deps --ignore-installed -vvv"
 
 requirements:
   host:
