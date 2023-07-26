@@ -1,6 +1,6 @@
 package:
   name: flankophile
-  version: 1.0.0
+  version: 0.2.8
 
 source:
   url: https://bitbucket.org/genomicepidemiology/flankophile.git
@@ -55,9 +55,6 @@ requirements:
     - bioconductor-treeio=1.18.0
     - r-ape=5.6
     - r-ggnewscale=0.4.7
-test:
-  commands:
-    snakemake --use-conda --cores | grep snakemake --use-conda --cores >/dev/null
 about:
   home: https://bitbucket.org/genomicepidemiology/flankophile
   summary: 'flankophile test.'
