@@ -1,0 +1,16 @@
+version 0.2.8 - Edit env. file to avoid version incompatability experienced by a few users.
+version 0.2.7 - Add Miniconda as a prereq. again in README and Quick guide.
+version 0.2.6 - Remove Snakemake from env file since it is a prereq.
+              - Remove Miniconda as prereq.
+              - Edit README file.
+              - Snakefile: Make version file in 4_plots folder into a copy of the config file.
+              - Snakefile: change from sed -i -e "s/[(|)|+]//g" -e "s/-//g" {output.fasta}      to 
+                 sed -i -e "s/[(|)|+]//g" {output.fasta} && sed -i -e "s/-//g" {output.fasta} 3 places to make Flankophile work on Mac computer.
+              - R script: Change metadata colours. 
+version 0.2.5 - Fix first name in various files.
+              - Remove version signature from last step in Snakefile. No effect on results.
+              - Fix problem with variant legend being too big for R if there are too many variants in cluster. 
+                 Effect = avoid breaking pipeline, but missing legends in some plots if there are many variants.
+              - Fix missing output_file.close() in Snakefile in  rule "add_variant_numbers_to_fasta1". No effect on results.
+version 0.2.4 - Fix bug related to NA in metadata. No effect on results but will avoid breaking pipeline.
+version 0.2.3 - Include metadata in plots and other improvements.
