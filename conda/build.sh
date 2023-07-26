@@ -1,4 +1,3 @@
-  GNU nano 6.2                                                                                                build.sh
 #!/bin/bash
 
 mkdir -p ${PREFIX}/bin
