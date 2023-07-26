@@ -57,7 +57,7 @@ requirements:
     - r-ggnewscale=0.4.7
 test:
   commands:
-    snakemake --use-conda --cores <number of cores>
+    snakemake -h
 about:
   home: https://bitbucket.org/genomicepidemiology/flankophile
   summary: 'flankophile test.'
