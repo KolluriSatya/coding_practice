@@ -30,7 +30,7 @@ requirements:
     - kma=1.3.28
 test:
   commands:
-    - parallel_snp_pipeline.py -h | grep parallel_snp_pipeline.py >/dev/null
+    - parallel_snp_pipeline.py -h
 
 about:
   home: https://bitbucket.org/genomicepidemiology/evergreen
