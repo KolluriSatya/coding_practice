@@ -1,5 +1,7 @@
-# Copy plasmidfinder
+#!/bin/bash
+
 mkdir -p ${PREFIX}/bin
-chmod +x meta.yaml
-cp meta.yaml ${PREFIX}/bin/meta.yaml
+
+chmod +x parallel_snp_pipeline.py
+cp parallel_snp_pipeline.py ${PREFIX}/bin/parallel_snp_pipeline.py
 
