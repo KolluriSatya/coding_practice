@@ -8,11 +8,10 @@ source:
 build:
   number: 0
   noarch: python
-  script: "{{ PYTHON }} -m pip install --no-deps --ignore-installed -vvv"
+  script: "conda env create -f environment.yaml"
 
 requirements:
   host:
-    - brewer2mpl==1.4=py36_0
     - python=3.7
     - tabulate=0.8.10
     - snakemake=6.9.1
@@ -36,7 +35,6 @@ requirements:
     - r-ape=5.6
     - r-ggnewscale=0.4.7
   run:
-    - brewer2mpl==1.4=py36_0
     - python=3.7
     - tabulate=0.8.10
     - snakemake=6.9.1
