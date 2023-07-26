@@ -8,7 +8,7 @@ source:
 build:
   number: 0
   noarch: python
-  script: "conda env create -f environment.yaml"
+  script: "python3 -m pip install -r flankophile.yaml"
 
 requirements:
   host:
