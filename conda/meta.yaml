@@ -7,7 +7,6 @@ source:
 
 build:
   number: 0
-  script: conda update conda
 
 requirements:
   host:
@@ -57,6 +56,9 @@ requirements:
     - bioconductor-treeio=1.18.0
     - r-ape=5.6
     - r-ggnewscale=0.4.7
+test:
+  commands:
+    snakemake -h
 
 about:
   home: https://bitbucket.org/genomicepidemiology/flankophile
