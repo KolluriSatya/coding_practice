@@ -3,7 +3,7 @@ package:
   version: 0.2.8
 
 source:
-  url: https://github.com/KolluriSatya/coding_practice/flankophile.git
+  url: https://github.com/KolluriSatya/coding_practice/tree/flankophile
 
 build:
   number: 0
