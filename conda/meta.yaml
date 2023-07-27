@@ -3,23 +3,27 @@ package:
   version: 1.0.0
 
 source:
-   url: https://github.com/KolluriSatya/coding_practice/tree/evergreen.git
+   url: https://github.com/KolluriSatya/coding_practice/tree/evergreen
 
 build:
   number: 0
+  noarch: python
+  script: "{{ PYTHON }} -m pip install . --no-deps --ignore-installed -vvv"
 
 requirements:
   host:
     - wget
     - python=2.7
+    - pip
     - scipy
     - numpy=1.15
     - ete3
     - joblib
-    - kma=1.3.28
+    - kma=1.4.9
   run:
     - wget
     - python=2.7
+    - pip
     - scipy
     - numpy=1.15
     - ete3
@@ -27,12 +31,12 @@ requirements:
     - tabulate
     - blast
     - joblib
-    - kma=1.3.28
+    - kma=1.4.9
 test:
   commands:
-    - parallel_snp_pipeline.py -h
+    - parallel_snp_pipeline -h
 
 about:
-  home: https://bitbucket.org/genomicepidemiology/evergreen
+  home: https://github.com/KolluriSatya/coding_practice/tree/evergreen
   summary: 'The Evergreen SNP phylogenic pipeline is for the purpose of continuous phylogenetical analysis of bacterial whole-genome sequencing data.'
   license: Apache-2.0
