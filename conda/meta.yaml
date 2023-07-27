@@ -3,7 +3,7 @@ package:
   version: 1.0.0
 
 source:
-   url: https://github.com/KolluriSatya/coding_practice/tree/evergreen
+   url: https://github.com/KolluriSatya/coding_practice/blob/evergreen/setup.py
 
 build:
   number: 0
