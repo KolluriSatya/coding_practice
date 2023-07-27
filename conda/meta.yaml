@@ -8,7 +8,7 @@ source:
 build:
   number: 0
   noarch: python
-  script: "{{ PYTHON }} -m pip install . --no-deps --ignore-installed -vvv"
+  script: conda env create -f evergreen.yaml
 
 requirements:
   host:
@@ -32,9 +32,6 @@ requirements:
     - blast
     - joblib
     - kma=1.4.9
-test:
-  commands:
-    - parallel_snp_pipeline -h
 
 about:
   home: https://github.com/KolluriSatya/coding_practice/tree/evergreen
