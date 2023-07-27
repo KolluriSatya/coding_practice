@@ -7,8 +7,7 @@ source:
 
 build:
   number: 0
-  noarch: python
-  script: pip install git+https://avthorn@bitbucket.org/genomicepidemiology/flankophile/src/master/
+
 requirements:
   host:
     - wget
