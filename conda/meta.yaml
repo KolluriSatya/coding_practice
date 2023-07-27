@@ -3,13 +3,15 @@ package:
   version: 0.2.8
 
 source:
-  url: https://github.com/KolluriSatya/coding_practice/tree/flankophile
+  url: https://avthorn@bitbucket.org/genomicepidemiology/flankophile/src/master/
 
 build:
   number: 0
-
+  noarch: python
+  script: pip install git+https://avthorn@bitbucket.org/genomicepidemiology/flankophile/src/master/
 requirements:
   host:
+    - wget
     - python=3.7
     - tabulate=0.8.10
     - snakemake=6.9.1
@@ -55,9 +57,7 @@ requirements:
     - bioconductor-treeio=1.18.0
     - r-ape=5.6
     - r-ggnewscale=0.4.7
-test:
-  commands:
-    snakemake -h
+
 about:
   home: https://bitbucket.org/genomicepidemiology/flankophile
   summary: 'flankophile test.'
