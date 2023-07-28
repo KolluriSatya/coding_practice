@@ -1,0 +1,14 @@
+name: osx-build
+channels:
+  - conda-forge
+  - bioconda
+dependencies:
+  - mamba
+  - python=2.7
+  - boa
+  - anaconda-client
+  - scipy
+  - numpy=1.15
+  - ete3
+  - joblib
+  - kma=1.4.9
