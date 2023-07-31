@@ -8,27 +8,20 @@ source:
 build:
   number: 0
   script: "{{ PYTHON }} -m pip install . --no-deps --ignore-installed -vvv"
+
 requirements:
   host:
     - wget
+    - mamba
     - python=2.7
-    - scipy
-    - numpy=1.15
     - ete3
     - joblib
     - kma=1.4.9
   run:
     - wget
+    - mamba
     - python=2.7
-    - scipy
-    - numpy=1.15
-    - ete3
-    - cgecore
-    - tabulate
-    - blast
-    - joblib
     - kma=1.4.9
-
 about:
   home: https://github.com/KolluriSatya/coding_practice/tree/evergreen
   summary: 'The Evergreen SNP phylogenic pipeline is for the purpose of continuous phylogenetical analysis of bacterial whole-genome sequencing data.'
