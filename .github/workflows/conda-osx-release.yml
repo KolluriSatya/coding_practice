@@ -24,20 +24,15 @@ jobs:
       - name: create environment with mamba
         uses: conda-incubator/setup-miniconda@v2
         with:
-          python-version: "2.7"
           mamba-version: "*"
           channels: conda-forge,bioconda,defaults
           auto-activate-base: true
           activate-environment: evergreen
           environment-file: evergreen.yaml
 
-      - name: activate environment
-        run: |
-          mamba activate evergreen
-
       - name: check solution
         run: |
-          mamba list --explicit 
+          mamba env export
 
       - name: build conda package
         run: |
