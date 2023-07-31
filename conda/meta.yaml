@@ -11,12 +11,10 @@ build:
 
 requirements:
   host:
-    - mamba
     - wget
     - python=2.7
     - kma=1.4.9
   run:
-    - mamba
     - wget
     - python=2.7
     - kma=1.4.9

@@ -4,7 +4,6 @@ channels:
   - bioconda
   - defaults
 dependencies:
-  - mamba
   - anaconda-client
   - python=2.7
   - scipy
