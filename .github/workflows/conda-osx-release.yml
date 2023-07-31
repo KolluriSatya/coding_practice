@@ -31,9 +31,13 @@ jobs:
           activate-environment: evergreen
           environment-file: evergreen.yaml
 
+      - name: activate environment
+        run: |
+          mamba activate evergreen
+
       - name: check solution
         run: |
-          mamba --version
+          mamba list --explicit 
 
       - name: build conda package
         run: |
