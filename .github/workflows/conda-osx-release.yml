@@ -30,13 +30,17 @@ jobs:
           activate-environment: evergreen
           environment-file: evergreen.yaml
 
+      - name: update mamba
+        run: |
+          mamba update --all
+
       - name: check solution
         run: |
           mamba env export
 
       - name: build conda package
         run: |
-          conda mambabuild conda -c conda-forge --output-folder .
+          conda mamba build conda -c conda-forge --output-folder .
 
       - name: upload conda package
         run: |
