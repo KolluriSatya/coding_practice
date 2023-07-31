@@ -44,7 +44,7 @@ jobs:
 
       - name: build conda package
         run: |
-          conda-build -c conda-forge --output-folder .
+          conda-build ./conda/ --output-folder .
 
       - name: upload conda package
         run: |
