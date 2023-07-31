@@ -25,6 +25,7 @@ jobs:
         uses: conda-incubator/setup-miniconda@v2
         with:
           python-version: "2.7"
+          mamba-version: "*"
           channels: conda-forge,bioconda,defaults
           auto-activate-base: true
           activate-environment: evergreen
