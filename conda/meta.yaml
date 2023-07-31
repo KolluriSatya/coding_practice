@@ -14,8 +14,6 @@ requirements:
     - wget
     - mamba
     - python=2.7
-    - ete3
-    - joblib
     - kma=1.4.9
   run:
     - wget
