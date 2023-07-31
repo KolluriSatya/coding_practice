@@ -44,7 +44,7 @@ jobs:
 
       - name: build conda package
         run: |
-          conda-build -c conda-forge --output-folder .
+          mambabuild conda -c conda-forge --output-folder .
 
       - name: upload conda package
         run: |
