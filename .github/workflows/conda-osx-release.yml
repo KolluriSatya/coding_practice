@@ -38,9 +38,13 @@ jobs:
         run: |
           mamba env export
 
+      - name: boa command
+        run: |  
+          mamba install boa -c conda-forge
+
       - name: build conda package
         run: |
-          conda build conda -c conda-forge --output-folder .
+          conda mambabuild conda -c conda-forge --output-folder .
 
       - name: upload conda package
         run: |
