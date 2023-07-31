@@ -33,7 +33,7 @@ jobs:
 
       - name: check solution
         run: |
-          mamba env export
+          mamba --version
 
       - name: build conda package
         run: |
