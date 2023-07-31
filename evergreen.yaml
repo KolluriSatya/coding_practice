@@ -5,7 +5,6 @@ channels:
   - defaults
 dependencies:
   - mamba
-  - boa
   - anaconda-client
   - python=2.7
   - scipy
