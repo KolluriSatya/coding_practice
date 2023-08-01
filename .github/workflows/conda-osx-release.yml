@@ -32,15 +32,15 @@ jobs:
 
       - name: update mamba
         run: |
-          mamba update --all
+          conda info
 
       - name: check solution
         run: |
-          mamba env export
+          conda env export
 
       - name: conda build command
         run: |
-          mamba install conda-build
+          conda install conda-build
 
       - name: build conda package
         run: |
