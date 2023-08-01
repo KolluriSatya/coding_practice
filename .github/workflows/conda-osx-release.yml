@@ -25,11 +25,13 @@ jobs:
         uses: conda-incubator/setup-miniconda@v2
         with:
           mamba-version: "*"
+          installer_url: https://github.com/KolluriSatya/coding_practice/tree/evergreen
           channels: conda-forge,bioconda,defaults
           auto-update-conda: true
           auto-activate-base: true
           activate-environment: evergreen
           environment-file: evergreen.yaml
+          use-only-tar-bz2: false
 
       - name: update mamba
         run: |
