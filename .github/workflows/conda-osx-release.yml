@@ -28,6 +28,7 @@ jobs:
           installer_url: https://github.com/KolluriSatya/coding_practice/tree/evergreen
           channels: conda-forge,bioconda,defaults
           auto-update-conda: true
+          show-channel-urls: true
           auto-activate-base: true
           activate-environment: evergreen
           environment-file: evergreen.yaml
@@ -37,6 +38,8 @@ jobs:
         run: |
           conda info
           conda list 
+          conda config --show-sources
+          conda config --show
 
       - name: upload conda package
         run: |
