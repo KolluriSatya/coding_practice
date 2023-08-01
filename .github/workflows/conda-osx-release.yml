@@ -41,4 +41,4 @@ jobs:
 
       - name: upload conda package
         run: |
-          anaconda -t ${{ secrets.SATYA_CONDA_AUTH_TOKEN }} upload --label main
+          anaconda -t ${{ secrets.SATYA_CONDA_AUTH_TOKEN }} upload
