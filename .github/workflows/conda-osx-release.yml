@@ -31,7 +31,7 @@ jobs:
           show-channel-urls: true
           auto-activate-base: true
           activate-environment: evergreen
-          environment-file: /evergreen/parallel_snp_pipeline.py
+          environment-file: evergreen.yaml
           use-only-tar-bz2: false
 
       - name: update mamba
@@ -43,4 +43,4 @@ jobs:
 
       - name: upload conda package
         run: |
-          anaconda -t ${{ secrets.SATYA_CONDA_AUTH_TOKEN }} upload --label main /usr/local/miniconda/envs/evergreen
+          anaconda -t ${{ secrets.SATYA_CONDA_AUTH_TOKEN }} upload --label main /usr/local/miniconda/envs/evergreen --c channel satyakp
