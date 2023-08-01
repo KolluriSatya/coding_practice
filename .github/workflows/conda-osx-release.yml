@@ -26,21 +26,15 @@ jobs:
         with:
           mamba-version: "*"
           channels: conda-forge,bioconda,defaults
+          auto-update-conda: true
           auto-activate-base: true
           activate-environment: evergreen
           environment-file: evergreen.yaml
 
       - name: update mamba
         run: |
-          conda update --all
-
-      - name: conda build command
-        run: |
-          conda install conda-build
-
-      - name: build conda package
-        run: |
-          conda-build .
+          conda info
+          conda list 
 
       - name: upload conda package
         run: |
