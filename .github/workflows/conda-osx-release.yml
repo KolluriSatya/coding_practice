@@ -31,7 +31,7 @@ jobs:
           show-channel-urls: true
           auto-activate-base: true
           activate-environment: evergreen
-          environment-file: evergreen.yaml
+          environment-file: /evergreen/parallel_snp_pipeline.py
           use-only-tar-bz2: false
 
       - name: update mamba

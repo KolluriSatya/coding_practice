@@ -10,6 +10,6 @@ if __name__ == '__main__':
     license='',
     install_requires=(),
     author='Malte B. Hallgren',
-    scripts=['bin/parallel_snp_pipeline'],
+    scripts=['bin/parallel_snp_pipeline.py'],
     description='evergreen',
 )
