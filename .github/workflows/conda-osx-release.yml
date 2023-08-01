@@ -40,4 +40,4 @@ jobs:
 
       - name: upload conda package
         run: |
-          anaconda -t ${{ secrets.SATYA_CONDA_AUTH_TOKEN }} upload --label main evergreen.yaml
+          anaconda -t ${{ secrets.SATYA_CONDA_AUTH_TOKEN }} upload --label main osx-64/
