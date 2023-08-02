@@ -33,6 +33,7 @@ jobs:
           use-only-tar-bz2: false
 
       - name: update mamba
+        shell: bash -el {0}
         run: |
           conda info
           conda list 
