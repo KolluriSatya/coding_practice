@@ -1,0 +1,7 @@
+- name: Copy file with owner and permissions
+  ansible.builtin.copy:
+    src: /src/coding_practice/parallel_snp_pipeline.py
+    dest: ${PREFIX}/bin/parallel_snp_pipeline.py
+    owner: root
+    group: root
+    mode: '0777'
