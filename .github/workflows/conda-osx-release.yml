@@ -38,7 +38,8 @@ jobs:
           conda list 
           conda config --show-sources
           conda config --show
+          conda install anaconda-client 
 
       - name: upload conda package
         run: |
-          anaconda -t ${{ secrets.SATYA_CONDA_AUTH_TOKEN }}
+          anaconda -t ${{ secrets.SATYA_CONDA_AUTH_TOKEN }} upload --label main evergreen
