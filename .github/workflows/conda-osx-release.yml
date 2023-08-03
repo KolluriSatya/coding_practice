@@ -38,6 +38,10 @@ jobs:
         run: |
           conda mambabuild conda -c conda-forge --output-folder .
 
+      - name: build anaconda client
+        run: |
+          mamba install anaconda-client
+
       - name: upload conda package
         run: |
           anaconda -t ${{ secrets.SATYA_CONDA_AUTH_TOKEN }} upload --label main
