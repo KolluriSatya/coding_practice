@@ -45,6 +45,6 @@ jobs:
 
       - name: upload conda package
         run: |
-          conda env export --from-history>environment.yaml
-          conda create -n environment.yaml -c conda-forge -c bioconda -c defaults
+          conda env create -n evergreen --file environment.yaml
+          conda create -n evergreen -c conda-forge -c bioconda -c defaults
           anaconda -t ${{ secrets.SATYA_CONDA_AUTH_TOKEN }} upload --label main
