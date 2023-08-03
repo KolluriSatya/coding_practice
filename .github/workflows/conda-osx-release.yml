@@ -29,7 +29,6 @@ jobs:
           channels: conda-forge,bioconda,defaults
           auto-update-conda: true
           show-channel-urls: true
-          activate-environment: anaconda-client-env
           environment-file: environment.yaml
           auto-activate-base: true
           use-only-tar-bz2: false
@@ -47,4 +46,4 @@ jobs:
         run: |
           conda env create -n evergreen --file environment.yaml
           conda create -n evergreen -c conda-forge -c bioconda -c defaults
-          anaconda -t ${{ secrets.SATYA_CONDA_AUTH_TOKEN }} upload --label main
+          anaconda -t ${{ secrets.SATYA_CONDA_AUTH_TOKEN }} upload --label main evergreen
