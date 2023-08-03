@@ -41,11 +41,10 @@ jobs:
           conda list 
           conda config --show-sources
           conda config --show
-          conda install anaconda-client 
+          conda install anaconda-client
 
       - name: upload conda package
         run: |
           conda env export --from-history>environment.yaml
-          conda env export evergreen>environment.yaml
           conda list --explicit>environment.txt
           anaconda -t ${{ secrets.SATYA_CONDA_AUTH_TOKEN }} upload --label main environment.txt
