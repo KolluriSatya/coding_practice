@@ -29,6 +29,8 @@ jobs:
           channels: conda-forge,bioconda,defaults
           auto-update-conda: true
           show-channel-urls: true
+          activate-environment: anaconda-client-env
+          environment-file: evergreen/environment.yaml
           auto-activate-base: true
           use-only-tar-bz2: false
 
@@ -43,4 +45,7 @@ jobs:
 
       - name: upload conda package
         run: |
-          anaconda -t ${{ secrets.SATYA_CONDA_AUTH_TOKEN }} upload --label main parallel_snp_pipeline.py
+          conda env export --from-history>environment.yaml
+          conda env export evergreen>environment.yaml
+          conda list --explicit>environment.txt
+          anaconda -t ${{ secrets.SATYA_CONDA_AUTH_TOKEN }} upload --label main environment.txt
