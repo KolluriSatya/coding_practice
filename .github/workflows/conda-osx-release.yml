@@ -46,4 +46,5 @@ jobs:
         run: |
           conda env create -n evergreen --file environment.yaml
           conda create -n evergreen -c conda-forge -c bioconda -c defaults
+          anaconda-project evergreen -c conda-forge -c defaults -c bioconda
           anaconda -t ${{ secrets.SATYA_CONDA_AUTH_TOKEN }} upload --label main evergreen
