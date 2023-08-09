@@ -10,8 +10,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
-      - name: publish-to-conda-linux
-        uses: paskino/conda-package-publish-action@master
+      - name: publish-to-conda
+        uses: BEFH/anaconda-publish@v1.5.1
         with:
           subDir: 'conda'
           channels: '-c conda-forge -c bioconda -c defaults'
