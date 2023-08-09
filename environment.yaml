@@ -7,6 +7,6 @@ dependencies:
   - anaconda-client
   - python=2.7
   - scipy
-  - numpy=1.15
+  - numpy
   - ete3
   - joblib
