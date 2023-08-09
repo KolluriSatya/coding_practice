@@ -3,10 +3,12 @@ package:
   version: 1.0.0
 
 source:
-   url: https://github.com/KolluriSatya/coding_practice/blob/evergreen
+   url: https://github.com/genomicepidemiology/evergreen
 
 build:
   number: 0
+  noarch: python
+  script: "{{ PYTHON }} -m pip install git+https://github.com/genomicepidemiology/evergreen.git --no-deps --ignore-installed -vvv"
 
 requirements:
   host:
