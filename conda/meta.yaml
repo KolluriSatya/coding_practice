@@ -15,10 +15,13 @@ requirements:
     - wget
     - python=2.7
     - kma=1.4.9
+    - numpy=1.15
+    - scipy
   run:
     - wget
     - python=2.7
     - kma=1.4.9
+    - numpy=1.15
 about:
   home: https://github.com/KolluriSatya/coding_practice/tree/evergreen
   summary: 'The Evergreen SNP phylogenic pipeline is for the purpose of continuous phylogenetical analysis of bacterial whole-genome sequencing data.'
