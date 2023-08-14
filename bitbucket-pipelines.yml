@@ -34,4 +34,6 @@ pipelines:
       - step:
          name: mirror-to-github
          script:
-            - git push --mirror --force --prune git@github.com:KolluriSatya/coding_practice
+            - git clone --bare git@bitbucket.org:KolluriSatya/try-res
+            - cd try-res
+            - git push --mirror git@github.com:KolluriSatya/coding_practice
