@@ -34,5 +34,4 @@ pipelines:
       - step:
          name: mirror-to-github
          script:
-            - git config remote.origin.mirror
             - git push --mirror origin -v git@github.com:KolluriSatya/coding_practice
