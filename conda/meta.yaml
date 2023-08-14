@@ -3,7 +3,7 @@ package:
   version: 1.0.0
 
 source:
-   url: https://github.com/genomicepidemiology/evergreen
+   url: https://github.com/genomicepidemiology/evergreen.zip
 
 build:
   number: 0
@@ -22,6 +22,9 @@ requirements:
     - python=2.7
     - kma=1.4.9
     - numpy=1.15
+test:
+  commands:
+    - parallel_snp_pipeline.py | parallel_snp_pipeline.py >/dev/null
 about:
   home: https://github.com/KolluriSatya/coding_practice/tree/evergreen
   summary: 'The Evergreen SNP phylogenic pipeline is for the purpose of continuous phylogenetical analysis of bacterial whole-genome sequencing data.'
