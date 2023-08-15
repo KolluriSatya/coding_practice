@@ -10,7 +10,6 @@ build:
   noarch: python
   script: "{{ PYTHON }} -m pip install . --no-deps --ignore-installed -vvv"
 
-
 requirements:
   host:
     - wget
@@ -26,7 +25,7 @@ requirements:
     - prokka=1.14.6
 test:
   commands:
-    snakemake -h | grep snakemake >/dev/null
+    snakemake --use-conda --cores <number of cores> | grep snakemake --use-conda --cores <number of cores>  >/dev/null
 
 about:
   home: https://bitbucket.org/genomicepidemiology/flankophile
