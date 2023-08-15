@@ -1,9 +1,9 @@
 package:
   name: evergreen
-  version: 3.5.4
+  version: 3.5.5
 
 source:
-   url: https://github.com/Kollurisatya/coding_practice/archive/refs/tags/v3.5.4.tar.gz
+   url: https://github.com/Kollurisatya/coding_practice/archive/refs/tags/v3.5.5.tar.gz
 
 build:
   number: 0
