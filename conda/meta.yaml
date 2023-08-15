@@ -3,10 +3,13 @@ package:
   version: 0.2.8
 
 source:
-  url: https://github.com/KolluriSatya/coding_practice/tree/flankophile
+  url: https://github.com/KolluriSatya/coding_practice/archive/refs/v0.2.8.tar.gz
 
 build:
   number: 0
+  noarch: python
+  script: "{{ PYTHON }} -m pip install . --no-deps --ignore-installed -vvv"
+
 
 requirements:
   host:
@@ -23,7 +26,7 @@ requirements:
     - prokka=1.14.6
 test:
   commands:
-    snakemake -h
+    snakemake -h | grep snakemake >/dev/null
 
 about:
   home: https://bitbucket.org/genomicepidemiology/flankophile
