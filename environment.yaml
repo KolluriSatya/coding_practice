@@ -5,7 +5,6 @@ channels:
   - bioconda
   - defaults
 dependencies:
-  - boa
   - python=3.7
   - tabulate=0.8.10
   - snakemake=6.9.1
