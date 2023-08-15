@@ -3,7 +3,7 @@ channels:
   - nodefaults
   - conda-forge
   - bioconda
-  - default
+  - defaults
 dependencies:
   - boa
   - python=3.7
