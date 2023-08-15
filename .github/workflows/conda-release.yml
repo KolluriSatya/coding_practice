@@ -49,7 +49,7 @@ jobs:
   #
   conda:
     runs-on: ubuntu-latest
-    #needs: docker
+    needs: auto-tag-release
     steps:
       - uses: actions/checkout@v1
       - name: publish-to-conda

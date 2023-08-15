@@ -3,7 +3,7 @@ package:
   version: 1.0.0
 
 source:
-   url: https://github.com/genomicepidemiology/evergreen
+   url: https://github.com/Kollurisatya/coding_practice/archive/refs/tags/v1.0.0.tar.gz
 
 build:
   number: 0
