@@ -3,14 +3,7 @@ from setuptools import setup, find_packages
 setup(
     name='evergreen',
     packages=find_packages(),
-    install_requires=[
-        'anaconda-client',
-        'python==2.7',
-        'scipy',
-        'numpy',
-        'ete3',
-        'joblib'
-        ],
+    install_requires=(),
     data_files=[],
     include_package_data=True,
     url='https://https://github.com/genomicepidemiology/evergreen',
