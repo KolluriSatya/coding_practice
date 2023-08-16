@@ -1,14 +1,13 @@
 package:
   name: evergreen
-  version: 3.6.9
+  version: 3.7.2
 
 source:
-   url: https://github.com/Kollurisatya/coding_practice/archive/refs/tags/v3.6.9.tar.gz
+   url: https://github.com/Kollurisatya/coding_practice/archive/refs/tags/v3.7.2.tar.gz
 
 build:
   number: 0
   noarch: python
-  script: "{{ PYTHON }} pip install pathlib"
   script: "{{ PYTHON }} setup.py install --no-deps --ignore-installed -vvv"
 
 requirements:
