@@ -5,7 +5,7 @@ setup(
     packages=find_packages(),
     install_requires=[
         'anaconda-client',
-        'python=2.7',
+        'python==2.7',
         'scipy',
         'numpy',
         'ete3',
