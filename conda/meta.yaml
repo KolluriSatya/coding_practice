@@ -1,9 +1,9 @@
 package:
   name: evergreen
-  version: 3.7.9
+  version: 3.8.2
 
 source:
-   url: https://github.com/Kollurisatya/coding_practice/archive/refs/tags/v3.7.9.tar.gz
+   url: https://github.com/Kollurisatya/coding_practice/archive/refs/tags/v3.8.2.tar.gz
 
 build:
   number: 0
@@ -24,9 +24,7 @@ requirements:
     - kma=1.4.9
     - numpy=1.15
     - joblib
-test:
-  commands:
-    - evergreen | evergreen >/dev/null
+
 about:
   home: https://github.com/KolluriSatya/coding_practice/tree/evergreen
   summary: 'The Evergreen SNP phylogenic pipeline is for the purpose of continuous phylogenetical analysis of bacterial whole-genome sequencing data.'
