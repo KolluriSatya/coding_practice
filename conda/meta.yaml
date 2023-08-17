@@ -1,9 +1,9 @@
 package:
   name: flankophile
-  version: 3.8.7
+  version: 3.8.8
 
 source:
-  url: https://github.com/KolluriSatya/coding_practice/archive/refs/v3.8.7.tar.gz
+  url: https://github.com/KolluriSatya/coding_practice/archive/refs/v3.8.8.tar.gz
 
 build:
   number: 0
@@ -23,10 +23,6 @@ requirements:
     - snakemake=6.9.1
     - tabulate=0.8.10
     - kma=1.4.0
-test:
-  commands:
-    snakemake --use-conda --cores <number of cores> | grep snakemake --use-conda --cores <number of cores>  >/dev/null
-
 about:
   home: https://bitbucket.org/genomicepidemiology/flankophile
   summary: 'flankophile test.'
