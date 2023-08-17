@@ -1,9 +1,9 @@
 package:
   name: flankophile
-  version: 3.9.4
+  version: 3.9.5
 
 source:
-  url: https://github.com/KolluriSatya/coding_practice/archive/refs/tags/v3.9.4.tar.gz
+  url: https://github.com/KolluriSatya/coding_practice/archive/refs/tags/v3.9.5.tar.gz
 
 build:
   number: 0
