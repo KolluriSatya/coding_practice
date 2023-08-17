@@ -1,6 +1,4 @@
-name: flankophile
 channels:
-  - nodefaults
   - conda-forge
   - bioconda
   - defaults
