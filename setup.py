@@ -10,5 +10,5 @@ setup(
     author='Malte B. Hallgren',
     scripts=['bin/'],
     author_email='malhal@food.dtu.dk',
-    description='flankophile', 'snakamake',
+    description='flankophile snakamake',
 )
