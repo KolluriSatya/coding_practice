@@ -56,6 +56,7 @@ jobs:
     steps:
       - name: checkout repository
         uses: actions/checkout@v2
+        uses: BEFH/anaconda-publish@v1.5.1
 
       - name: Make conda yaml
         run: |
