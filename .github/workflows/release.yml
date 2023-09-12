@@ -27,6 +27,7 @@ jobs:
           pip install PyYAML
           pip install ruamel.yaml
           python conda/make_conda.py
+          cat conda/meta.yaml
 
       - uses: mamba-org/setup-micromamba@v1
         with:
@@ -57,14 +58,12 @@ jobs:
       - name: checkout repository
         uses: actions/checkout@v2
 
-      - name: anaconda-publish
-        uses: BEFH/anaconda-publish@v1.5.1
-
       - name: Make conda yaml
         run: |
           pip install PyYAML
           pip install ruamel.yaml
           python conda/make_conda.py
+          cat conda/meta.yaml
 
       - uses: mamba-org/setup-micromamba@v1
         with:
