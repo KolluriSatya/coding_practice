@@ -11,8 +11,8 @@ source['url'] = 'https://bitbucket.org/genomicepidemiology/kma/get/1.4.14.tar.gz
 build = yaml.comments.CommentedMap()
 build['number'] = 0
 
-script = yaml.comments.CommentedMap()
-script['script'] = ['conda install -c conda-forge libzlib']
+code = yaml.comments.CommentedMap()
+code['script'] = ['conda install -c conda-forge libzlib']
 
 requirements = yaml.comments.CommentedMap()
 requirements['build'] = ['make', '{{ compiler(\'c\') }}']
