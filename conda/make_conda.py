@@ -12,9 +12,9 @@ build = yaml.comments.CommentedMap()
 build['number'] = 0
 
 requirements = yaml.comments.CommentedMap()
-requirements['build'] = ['make', '{{ compiler(\'c\') }}']
-requirements['host'] = ['zlib >=1.2.13 conda_forge', 'libgcc-ng >=12', 'libzlib >=1.2.13,<1.3.0a0']
-requirements['run'] = ['zlib >=1.2.13 conda_forge', 'libgcc-ng >=12', 'libzlib >=1.2.13,<1.3.0a0']
+requirements['build'] = ['make', '{{ compiler(\'c\') }}', 'libgcc_mutex 0.1 conda_forge']
+requirements['host'] = ['zlib 1.2.13 h166bdaf_4', 'libgcc-ng 12.2.0 h65d4601_19', 'libzlib 1.2.13 h166bdaf_4']
+requirements['run'] = ['zlib', 'libgcc-ng >=12', 'libzlib >=1.2.13,<1.3.0a0']
 
 about = yaml.comments.CommentedMap()
 about['home'] = 'https://bitbucket.org/genomicepidemiology/kma'
