@@ -8,4 +8,4 @@ dependencies:
   - python
   - boa
   - anaconda-client
-  - zlib1g-dev
+  - pkg-config zlib --libs
