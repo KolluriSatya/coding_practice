@@ -13,8 +13,8 @@ build['number'] = 0
 
 requirements = yaml.comments.CommentedMap()
 requirements['build'] = ['make', '{{ compiler(\'c\') }}']
-requirements['host'] = ['zlib >=1.2.13', 'libzlib >=1.2.13,<1.3.0a0']
-requirements['run'] = ['zlib >=1.2.13', 'libzlib >=1.2.13,<1.3.0a0']
+requirements['host'] = ['zlib', 'libzlib']
+requirements['run'] = ['zlib', 'libzlib']
 
 about = yaml.comments.CommentedMap()
 about['home'] = 'https://bitbucket.org/genomicepidemiology/kma'
@@ -27,7 +27,7 @@ identifiers['doi'] = '10.1186/s12859-018-2336-6'
 extra['identifiers'] = identifiers
 
 # Create a dictionary for the entire YAML content
-data = yaml.comments.CommentedMap() 
+data = yaml.comments.CommentedMap()
 data['package'] = package
 data['source'] = source
 data['build'] = build
