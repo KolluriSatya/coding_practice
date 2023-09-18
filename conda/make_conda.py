@@ -13,8 +13,8 @@ build['number'] = 0
 
 requirements = yaml.comments.CommentedMap()
 requirements['build'] = ['make', '{{ compiler(\'c\') }}']
-requirements['host'] = ['zlib =1.2.12']
-requirements['run'] = ['zlib =1.2.12']
+requirements['host'] = ['zlib =1.2.13', 'libzlib=1.2.13']
+requirements['run'] = ['zlib', 'libzlib >=1.2.13,<1.3.0a0']
 
 about = yaml.comments.CommentedMap()
 about['home'] = 'https://bitbucket.org/genomicepidemiology/kma'
