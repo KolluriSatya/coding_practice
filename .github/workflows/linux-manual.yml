@@ -22,7 +22,6 @@ jobs:
 
       - name: Make conda yaml
         run: |
-          conda install -c conda-forge libzlib
           pip install PyYAML
           pip install ruamel.yaml
           python conda/make_conda.py
