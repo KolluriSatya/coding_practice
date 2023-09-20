@@ -1,6 +1,8 @@
-name: osx-build
+name: linux-build
 channels:
   - conda-forge
+  - bioconda
+  - defaults
 dependencies:
   - mamba
   - python
