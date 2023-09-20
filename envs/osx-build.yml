@@ -1,5 +1,5 @@
 name: osx-build
 channels:
-  - conda-forges
+  - conda-forge
 dependencies:
   - python
