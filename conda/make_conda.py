@@ -6,15 +6,15 @@ package['name'] = 'kma'
 package['version'] = '1.4.14'
 
 source = yaml.comments.CommentedMap()
-source['url'] = 'https://bitbucket.org/genomicepidemiology/kma/get/1.4.14.tar.gz'
+source['url'] = 'https://bitbucket.org/genomicepidemiology/{{ name }}/get/{{ version }}.tar.gz'
 
 build = yaml.comments.CommentedMap()
 build['number'] = 0
 
 requirements = yaml.comments.CommentedMap()
 requirements['build'] = ['make', '{{ compiler(\'c\') }}']
-requirements['host'] = ['zlib=1.2.12', 'libzlib=1.2.12']
-requirements['run'] = ['zlib=1.2.12', 'libzlib=1.2.12']
+requirements['host'] = ['zlib=1.2.12']
+requirements['run'] = ['zlib=1.2.12']
 
 about = yaml.comments.CommentedMap()
 about['home'] = 'https://bitbucket.org/genomicepidemiology/kma'
