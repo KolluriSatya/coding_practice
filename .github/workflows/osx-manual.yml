@@ -20,6 +20,19 @@ jobs:
       - name: checkout repository
         uses: actions/checkout@v2
 
+      - name: create environment with mamba
+        uses: conda-incubator/setup-miniconda@v2
+        with:
+          mamba-version: "*"
+          channels: conda-forge,bioconda,defaults
+          auto-activate-base: true
+          activate-environment: osx-build
+          environment-file: envs/osx-build.yml
+
+      - name: check solution
+        run: |
+          mamba env export
+
       - name: Make conda yaml
         run: |
           pip install PyYAML
@@ -27,14 +40,9 @@ jobs:
           python conda/make_conda.py
           cat conda/meta.yaml
 
-      - uses: mamba-org/setup-micromamba@v1
-        with:
-          environment-file: envs/osx-build.yml
-
       - name: build conda package
         run: |
-          conda install -c anaconda anaconda-client
-          conda mambabuild conda -c conda-forge -c genomicepidemiology -c bioconda -c defaults --output-folder .
+          conda mambabuild conda -c conda-forge -c genomicepidemiology --output-folder .
 
       - name: upload conda package
         run: |
