@@ -1,24 +1,42 @@
 on:
   workflow_dispatch
 
-name: manual release linux
+name: manual release osx
 
 jobs:
   conda-linux:
-    name: Linux Upload
-    runs-on: ubuntu-latest
+    name: ${{ matrix.os }}
+    runs-on: ${{ matrix.os }}
+    defaults:
+      run:
+        shell: bash -l {0}
+
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ linux-latest ]
+
     steps:
-      - uses: actions/checkout@v1
+      - name: checkout repository
+        uses: actions/checkout@v2
+
       - name: Make conda yaml
         run: |
           pip install PyYAML
           pip install ruamel.yaml
           python conda/make_conda.py
-          cat conda/meta.yaml 
-      - name: publish-to-conda-linux
-        uses: BEFH/anaconda-publish@v1.5.1
+          cat conda/meta.yaml
+
+      - name: build conda package
+        uses: mamba-org/setup-micromamba@v1
         with:
-          subDir: 'conda'
-          channels: 'conda-forge -c genomicepidemiology'
-          AnacondaToken: ${{ secrets.SATYA_CONDA_AUTH_TOKEN }}
-          publish: true
+          environment-file: envs/linux-build.yml
+
+      - name: build package
+        run: |
+          conda mambabuild conda -c conda-forge -c genomicepidemiology --output-folder .
+
+      - name: upload conda package
+        run: |
+          
+          anaconda -t ${{ secrets.SATYA_CONDA_AUTH_TOKEN }} upload --label main linux-64/*.tar.bz2
