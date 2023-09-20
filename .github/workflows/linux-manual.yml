@@ -9,6 +9,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
+      - name: Make conda yaml
+        run: |
+          pip install PyYAML
+          pip install ruamel.yaml
+          python conda/make_conda.py
+          cat conda/meta.yaml
       - name: publish-to-conda-linux
         uses: BEFH/anaconda-publish@v1.5.1
         with:
