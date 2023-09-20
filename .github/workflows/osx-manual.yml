@@ -1,9 +1,8 @@
-name: conda-osx-release
 on:
-  push:
-    # Sequence of patterns matched against refs/tags
-    tags:
-      - 'v*' # Push events to matching v*, i.e. v1.0, v20.15.10
+  workflow_dispatch
+
+name: manual release osx
+
 jobs:
   conda-osx:
     name: ${{ matrix.os }}
@@ -15,7 +14,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        os: [macos-latest]
+        os: [ macos-latest ]
 
     steps:
       - name: checkout repository
@@ -34,9 +33,16 @@ jobs:
         run: |
           mamba env export
 
+      - name: Make conda yaml
+        run: |
+          pip install PyYAML
+          pip install ruamel.yaml
+          python conda/make_conda.py
+          cat conda/meta.yaml
+
       - name: build conda package
         run: |
-          conda mambabuild conda -c conda-forge --output-folder .
+          conda mambabuild conda -c conda-forge -c genomicepidemiology --output-folder .
 
       - name: upload conda package
         run: |
