@@ -1,20 +1,29 @@
 import ruamel.yaml as yaml
 
+
+
 # Create an ordered dictionary for each section
 package = yaml.comments.CommentedMap()
 package['name'] = 'kma'
+
+with open('version.h', 'r') as f:
+    for line in f:
+        if line.startswith('#define'):
+            package['version'] = line.split()[2].replace("\"", "")
+
+
 package['version'] = '1.4.14'
 
 source = yaml.comments.CommentedMap()
-source['url'] = 'https://bitbucket.org/genomicepidemiology/{{ name }}/get/{{ version }}.tar.gz'
+source['url'] = 'https://bitbucket.org/genomicepidemiology/{}/get/{}.tar.gz'.format(package['name'], package['version'])
 
 build = yaml.comments.CommentedMap()
 build['number'] = 0
 
 requirements = yaml.comments.CommentedMap()
 requirements['build'] = ['make', '{{ compiler(\'c\') }}']
-requirements['host'] = ['zlib=1.2.12']
-requirements['run'] = ['zlib=1.2.12']
+requirements['host'] = ['zlib']
+requirements['run'] = ['zlib']
 
 about = yaml.comments.CommentedMap()
 about['home'] = 'https://bitbucket.org/genomicepidemiology/kma'
