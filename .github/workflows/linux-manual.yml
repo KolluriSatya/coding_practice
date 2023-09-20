@@ -14,17 +14,11 @@ jobs:
           pip install PyYAML
           pip install ruamel.yaml
           python conda/make_conda.py
-          cat conda/meta.yaml
-      - name: build conda package
-        uses: mamba-org/setup-micromamba@v1
+          cat conda/meta.yaml 
+      - name: publish-to-conda-linux
+        uses: BEFH/anaconda-publish@v1.5.1
         with:
-          environment-file: envs/linux-build.yml   
-      
-      - name: build package
-        run: |
-          conda mambabuild conda -c conda-forge -c genomicepidemiology --output-folder .
-
-      - name: upload conda package
-        run: |
-          
-          anaconda -t ${{ secrets.SATYA_CONDA_AUTH_TOKEN }} upload --label main osx-64/*.tar.bz2
+          subDir: 'conda'
+          channels: 'conda-forge -c cctbx202211 -c genomicepidemiology'
+          AnacondaToken: ${{ secrets.SATYA_CONDA_AUTH_TOKEN }}
+          publish: true
