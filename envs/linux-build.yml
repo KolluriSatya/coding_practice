@@ -5,6 +5,6 @@ channels:
   - defaults
 dependencies:
   - mamba
-  - python=3.10
+  - python >=3.10
   - boa
   - anaconda-client

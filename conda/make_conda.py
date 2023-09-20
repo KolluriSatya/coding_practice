@@ -6,7 +6,7 @@ package['name'] = 'kma'
 package['version'] = '1.4.14'
 
 source = yaml.comments.CommentedMap()
-source['url'] = 'https://bitbucket.org/genomicepidemiology/{{ name }}/get/{{ version }}.tar.gz'
+source['url'] = 'https://bitbucket.org/genomicepidemiology/kma/get/1.4.14.tar.gz'
 
 build = yaml.comments.CommentedMap()
 build['number'] = 0
