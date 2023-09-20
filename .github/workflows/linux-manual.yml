@@ -1,7 +1,7 @@
 on:
   workflow_dispatch
 
-name: manual release osx
+name: manual release linux
 
 jobs:
   conda-linux:
