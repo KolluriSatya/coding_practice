@@ -32,9 +32,11 @@ jobs:
         with:
           environment-file: envs/osx-build.yml
 
+      - name: build package
         run: |
           conda mambabuild conda -c conda-forge -c genomicepidemiology --output-folder .
 
       - name: upload conda package
         run: |
+          
           anaconda -t ${{ secrets.SATYA_CONDA_AUTH_TOKEN }} upload --label main osx-64/*.tar.bz2
