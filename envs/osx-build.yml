@@ -1,10 +1,5 @@
 name: osx-build
 channels:
-  - conda-forge
-  - genomicepidemiology
-  - bioconda
+  - conda-forges
 dependencies:
-  - mamba
   - python
-  - boa
-  - anaconda-client
