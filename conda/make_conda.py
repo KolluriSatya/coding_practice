@@ -11,9 +11,6 @@ with open('version.h', 'r') as f:
         if line.startswith('#define'):
             package['version'] = line.split()[2].replace("\"", "")
 
-
-package['version'] = '1.4.14'
-
 source = yaml.comments.CommentedMap()
 source['url'] = 'https://bitbucket.org/genomicepidemiology/{}/get/{}.tar.gz'.format(package['name'], package['version'])
 

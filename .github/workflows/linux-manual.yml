@@ -4,39 +4,15 @@ on:
 name: manual release linux
 
 jobs:
-  conda-osx:
-    name: ${{ matrix.os }}
-    runs-on: ${{ matrix.os }}
-    defaults:
-      run:
-        shell: bash -l {0}
-
-    strategy:
-      fail-fast: false
-      matrix:
-        os: [ ubuntu-latest ]
-
+  conda-linux:
+    name: Linux Upload
+    runs-on: ubuntu-latest
     steps:
-      - name: checkout repository
-        uses: actions/checkout@v2
-
-      - name: Make conda yaml
-        run: |
-          pip install PyYAML
-          pip install ruamel.yaml
-          python conda/make_conda.py
-          cat conda/meta.yaml
-
-      - name: build conda package
-        uses: mamba-org/setup-micromamba@v1
+      - uses: actions/checkout@v1
+      - name: publish-to-conda-linux
+        uses: paskino/conda-package-publish-action@master
         with:
-          environment-file: envs/linux-build.yml
-
-      - name: build package
-        run: |
-          conda mambabuild conda -c conda-forge -c genomicepidemiology --output-folder .
-
-      - name: upload conda package
-        run: |
-          
-          anaconda -t ${{ secrets.SATYA_CONDA_AUTH_TOKEN }} upload --label main linux-64/*.tar.bz2
+          subDir: 'conda'
+          channels: '-c conda-forge -c bioconda -c defaults'
+          AnacondaToken: ${{ secrets.SATYA_CONDA_AUTH_TOKEN }}
+          publish: true
