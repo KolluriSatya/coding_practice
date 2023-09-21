@@ -1,7 +1,5 @@
 import ruamel.yaml as yaml
 
-
-
 # Create an ordered dictionary for each section
 package = yaml.comments.CommentedMap()
 package['name'] = 'ccphylo'
