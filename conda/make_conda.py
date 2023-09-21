@@ -28,7 +28,6 @@ about['license'] = 'Apache-2.0'
 extra = yaml.comments.CommentedMap()
 identifiers = yaml.comments.CommentedMap()
 identifiers['doi'] = '10.1093/bioinformatics/btac774'
-identifiers['doi'] = '10.1093/biomethods/bpab008'
 extra['identifiers'] = identifiers
 
 # Create a dictionary for the entire YAML content
