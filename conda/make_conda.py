@@ -19,8 +19,8 @@ build['number'] = 0
 
 requirements = yaml.comments.CommentedMap()
 requirements['build'] = ['make', '{{ compiler(\'c\') }}']
-requirements['host'] = ['zlib >=1.2.11,<1.3.0a0']
-requirements['run'] = ['zlib>=1.2.11,<1.3.0a0']
+requirements['host'] = ['zlib']
+requirements['run'] = ['zlib']
 
 about = yaml.comments.CommentedMap()
 about['home'] = 'https://bitbucket.org/genomicepidemiology/ccphylo'
