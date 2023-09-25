@@ -33,8 +33,8 @@ jobs:
         with:
           mamba-version: "*"
           channels: conda-forge,bioconda,defaults
-          activate-environment: osx-linux
-          environment-file: envs/osx-linux.yml
+          activate-environment: linux-build
+          environment-file: envs/linux-build.yml
 
       - name: check solution
         run: |
