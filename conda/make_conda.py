@@ -11,7 +11,6 @@ with open('version.h', 'r') as f:
 
 source = yaml.comments.CommentedMap()
 source['url'] = 'https://bitbucket.org/genomicepidemiology/{}/get/{}.tar.gz'.format(package['name'], package['version'])
-
 build = yaml.comments.CommentedMap()
 build['number'] = 0
 

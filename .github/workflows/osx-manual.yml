@@ -28,16 +28,9 @@ jobs:
           cat conda/meta.yaml
 
       - name: build conda package
-        uses: conda-incubator/setup-miniconda@v2
+        uses: mamba-org/setup-micromamba@v1
         with:
-          mamba-version: "*"
-          channels: conda-forge,bioconda,defaults
-          activate-environment: osx-build
           environment-file: envs/osx-build.yml
-
-      - name: check solution
-        run: |
-          mamba env export
 
       - name: build package
         run: |
