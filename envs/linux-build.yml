@@ -4,7 +4,7 @@ channels:
   - defaults
 dependencies:
   - mamba
-  - python
+  - python=3.7
   - boa
   - anaconda-client
   - beast2
