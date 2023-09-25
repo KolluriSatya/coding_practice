@@ -11,8 +11,10 @@ with open('version.h', 'r') as f:
 
 source = yaml.comments.CommentedMap()
 source['url'] = 'https://bitbucket.org/genomicepidemiology/{}/get/{}.tar.gz'.format(package['name'], package['version'])
+
 build = yaml.comments.CommentedMap()
 build['number'] = 0
+#build['noarch'] = 'generic'
 
 requirements = yaml.comments.CommentedMap()
 requirements['build'] = ['make', '{{ compiler(\'c\') }}']
@@ -21,12 +23,12 @@ requirements['run'] = ['zlib']
 
 about = yaml.comments.CommentedMap()
 about['home'] = 'https://bitbucket.org/genomicepidemiology/ccphylo'
-about['summary'] = 'CCPhylo is a software suite designed to easen phylogenetic analysis based on alignments from KMA. Neighbor-Joining can be run without KMA alignments, if a Phylip distance matrix is given using "ccphylo tree".'
+about['summary'] = 'ccphylo test'
 about['license'] = 'Apache-2.0'
 
 extra = yaml.comments.CommentedMap()
 identifiers = yaml.comments.CommentedMap()
-identifiers['doi'] = '10.1093/bioinformatics/btac774'
+identifiers['doi'] = '10.1186/s12859-018-2336-6'
 extra['identifiers'] = identifiers
 
 # Create a dictionary for the entire YAML content
