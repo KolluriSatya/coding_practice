@@ -28,13 +28,20 @@ jobs:
           cat conda/meta.yaml
 
       - name: build conda package
-        uses: mamba-org/setup-micromamba@v1
+        uses: conda-incubator/setup-micromamba@v2
         with:
+          mamba-version: "*"
+          channels: conda-forge,bioconda,defaults
+          activate-environment: osx-build
           environment-file: envs/osx-build.yml
+
+      - name: check solution
+        run: |
+          mamba env export
 
       - name: build package
         run: |
-          conda mambabuild conda -c conda-forge -c bioconda -c genomicepidemiology --output-folder .
+          conda mambabuild conda -c conda-forge --output-folder .
 
       - name: upload conda package
         run: |

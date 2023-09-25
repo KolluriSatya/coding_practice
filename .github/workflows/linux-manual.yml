@@ -26,14 +26,23 @@ jobs:
           pip install ruamel.yaml
           python conda/make_conda.py
           cat conda/meta.yaml
+          
 
-      - uses: mamba-org/setup-micromamba@v1
+      - name: build conda package
+        uses: conda-incubator/setup-micromamba@v2
         with:
-          environment-file: envs/linux-build.yml
+          mamba-version: "*"
+          channels: conda-forge,bioconda,defaults
+          activate-environment: osx-linux
+          environment-file: envs/osx-linux.yml
+
+      - name: check solution
+        run: |
+          mamba env export
 
       - name: build conda package
         run: |
-          conda mambabuild conda -c conda-forge -c bioconda -c genomicepidemiology --output-folder .
+          conda mambabuild conda -c conda-forge --output-folder .
 
       - name: upload conda package
         run: |
