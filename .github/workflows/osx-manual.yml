@@ -28,7 +28,7 @@ jobs:
           cat conda/meta.yaml
 
       - name: build conda package
-        uses: conda-incubator/setup-micromamba@v2
+        uses: conda-incubator/setup-miniconda@v2
         with:
           mamba-version: "*"
           channels: conda-forge,bioconda,defaults
