@@ -9,4 +9,5 @@ dependencies:
   - biopython
   - cgecore
   - blast
+  - boa
   - anaconda-client
