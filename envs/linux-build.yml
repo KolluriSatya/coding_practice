@@ -1,8 +1,8 @@
 name: linux-build
 channels:
   - conda-forge
-  - bioconda
   - defaults
+  - bioconda
 dependencies:
   - mamba
   - python
