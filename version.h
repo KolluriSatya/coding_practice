@@ -1,1 +1,1 @@
-#define FINGERSEQ_VERSION "2.1.8"
+#define FINGERSEQ_VERSION "2.1.5"
