@@ -1,28 +1,24 @@
 on:
-  workflow_dispatch:
-    name: conda_release
+  workflow_dispatch
+
+name: manual release linux
+
 jobs:
-  conda-release:
-    name: ${{ matrix.os }}
-    runs-on: ${{ matrix.os }}
-    defaults:
-      run:
-        shell: bash -l {0}
-
-    strategy:
-      fail-fast: false
-      matrix:
-        os: [ ubuntu-latest ]
-
+  conda-linux:
+    name: Linux Upload
+    runs-on: ubuntu-latest
     steps:
       - name: checkout repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v
+
       - name: Make conda yaml
         run: |
             pip install PyYAML
             pip install ruamel.yaml
-            python conda/make_conda_linux.py
+            python conda/make_conda.py
             cat conda/meta.yaml
+
+      - name: publish-to-conda
         uses: BEFH/anaconda-publish@v1.5.1
         with:
           subDir: 'conda'
