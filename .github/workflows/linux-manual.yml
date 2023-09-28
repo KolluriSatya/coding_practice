@@ -1,8 +1,6 @@
 on:
-  workflow_dispatch
-
-name: manual release linux
-
+  workflow_dispatch:
+    name: conda_release
 jobs:
   conda-linux:
     name: ${{ matrix.os }}
@@ -26,12 +24,11 @@ jobs:
           pip install ruamel.yaml
           python conda/make_conda_linux.py
           cat conda/meta.yaml
-
-      - uses: mamba-org/setup-micromamba@v1
-      - name: build conda package
-        run: |
-          conda mambabuild conda -c conda-forge -c bioconda -c genomicepidemiology --output-folder .
-
-      - name: upload conda package
-        run: |
-          anaconda -t ${{ secrets.SATYA_CONDA_AUTH_TOKEN }} upload --label main noarch/*.tar.bz2
+      - uses: actions/checkout@v1
+      - name: publish-to-conda-linux
+        uses: BEFH/anaconda-publish@v1.5.1
+        with:
+          subDir: 'conda'
+          channels: 'conda-forge -c bioconda -c defaults'
+          AnacondaToken: ${{ secrets.SATYA_CONDA_AUTH_TOKEN }}
+          publish: true
