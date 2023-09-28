@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: checkout repository
-        uses: actions/checkout@v
+        uses: actions/checkout@v2
 
       - name: Make conda yaml
         run: |
