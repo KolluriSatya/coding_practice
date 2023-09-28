@@ -17,7 +17,7 @@ build['number'] = 1
 build['noarch'] = 'generic'
 
 requirements = yaml.comments.CommentedMap()
-requirements['host'] = ['python>=3.5', 'kma', 'wget']
+requirements['host'] = ['python>=3.5', 'kma', 'wget', 'biopython', 'cgecore', 'blast']
 requirements['run'] = ['python>=3.5', 'kma', 'biopython', 'cgecore', 'blast']
 
 about = yaml.comments.CommentedMap()
