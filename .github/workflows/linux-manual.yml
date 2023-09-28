@@ -28,9 +28,6 @@ jobs:
           cat conda/meta.yaml
 
       - uses: mamba-org/setup-micromamba@v1
-        with:
-          environment-file: envs/linux-build.yml
-
       - name: build conda package
         run: |
           conda mambabuild conda -c conda-forge -c bioconda -c genomicepidemiology --output-folder .
