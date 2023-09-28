@@ -2,7 +2,7 @@ on:
   workflow_dispatch:
     name: conda_release
 jobs:
-  conda-linux:
+  conda-release:
     name: ${{ matrix.os }}
     runs-on: ${{ matrix.os }}
     defaults:
@@ -17,7 +17,6 @@ jobs:
     steps:
       - name: checkout repository
         uses: actions/checkout@v2
-      - uses: actions/checkout@v1
       - name: Make conda yaml
         run: |
             pip install PyYAML
