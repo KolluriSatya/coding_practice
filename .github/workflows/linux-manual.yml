@@ -23,9 +23,9 @@ jobs:
           environment-file: envs/linux-build.yml
 
       - name: publish-to-conda
-        uses: paskino/conda-package-publish-action@master
+        uses: BEFH/anaconda-publish@v1.5.1
         with:
           subDir: 'conda'
-          channels: 'genomicepidemiology -c bioconda -c conda-forge'
+          channels: 'conda-forge -c genomicepidemiology -c bioconda'
           AnacondaToken: ${{ secrets.SATYA_CONDA_AUTH_TOKEN }}
           publish: true
