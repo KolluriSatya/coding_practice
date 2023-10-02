@@ -1,8 +1,8 @@
 name: linux-build
 channels:
+  - genomicepidemiology
   - conda-forge
   - bioconda
-  - genomicepidemiology
 dependencies:
   - mamba
   - python
