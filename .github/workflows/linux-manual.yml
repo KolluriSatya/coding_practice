@@ -26,6 +26,6 @@ jobs:
         uses: BEFH/anaconda-publish@v1.5.1
         with:
           subDir: 'conda'
-          channels: 'conda-forge -c bioconda'
+          channels: 'conda-forge -c bioconda -c genomicepidemiology'
           AnacondaToken: ${{ secrets.SATYA_CONDA_AUTH_TOKEN }}
           publish: true
