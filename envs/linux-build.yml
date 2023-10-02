@@ -9,6 +9,6 @@ dependencies:
   - anaconda-client
   - biopython
   - wget
-  - blast
-  - cgecore
-  - kma
+  - blast >=2.14.1
+  - cgecore >=1.5.6
+  - kma >=1.4.9
