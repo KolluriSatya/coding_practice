@@ -23,7 +23,7 @@ jobs:
           environment-file: envs/linux-build.yml
 
       - name: publish-to-conda
-        uses: BEFH/anaconda-publish@v1.5.1
+        uses: paskino/conda-package-publish-action@master
         with:
           subDir: 'conda'
           channels: 'genomicepidemiology -c bioconda -c conda-forge'
