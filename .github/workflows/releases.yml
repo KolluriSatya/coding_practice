@@ -1,6 +1,6 @@
 on:
   workflow_dispatch:
-
+name: manual release linux
 jobs:
   conda-linux:
     name: Linux Upload
