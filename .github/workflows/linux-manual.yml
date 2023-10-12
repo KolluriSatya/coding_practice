@@ -18,11 +18,10 @@ jobs:
       - name: checkout repository
         uses: actions/checkout@v2
 
-      - name: build conda package
-        run: |
-          conda install -c anaconda anaconda-client
-          conda mambabuild conda -c conda-forge -c bioconda -c defaults --output-folder .
-
-      - name: upload conda package
-        run: |
-          anaconda -t ${{ secrets.SATYAKP_CONDA_AUTH_TOKEN }} upload --label main noarch/*.tar.bz2
+      - name: publish-to-conda-linux
+        uses: BEFH/anaconda-publish@v1.5.1
+        with:
+          subDir: 'info/recipe'
+          channels: '-c conda-forge -c bioconda -c defaults'
+          AnacondaToken: ${{ secrets.SATYAKP_CONDA_AUTH_TOKEN }}
+          publish: true
