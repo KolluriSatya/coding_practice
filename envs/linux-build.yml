@@ -7,9 +7,3 @@ dependencies:
   - python
   - boa
   - anaconda-client
-  - biopython
-  - wget
-  - blast
-  - cgecore
-  - tabulate
-  - kma
