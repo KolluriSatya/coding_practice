@@ -1,0 +1,17 @@
+{
+  "arch": null,
+  "build": "pyh3252c3a_0",
+  "build_number": 0,
+  "depends": [
+    "biopython",
+    "python"
+  ],
+  "license": "Apache-2.0",
+  "license_family": "Apache",
+  "name": "cgecore",
+  "noarch": "python",
+  "platform": null,
+  "subdir": "noarch",
+  "timestamp": 1604319243196,
+  "version": "1.5.6"
+}
