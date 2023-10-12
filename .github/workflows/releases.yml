@@ -4,12 +4,23 @@ name: manual release linux
 
 jobs:
   conda-linux:
-    name: Linux Upload
-    runs-on: ubuntu-latest
+    name: ${{ matrix.os }}
+    runs-on: ${{ matrix.os }}
+    defaults:
+      run:
+        shell: bash -l {0}
+
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ ubuntu-latest ]
+
     steps:
-      - uses: actions/checkout@v1
+      - name: checkout repository
+        uses: actions/checkout@v2
+
       - name: publish-to-conda-linux
-        uses: paskino/conda-package-publish-action@master
+        uses: BEFH/anaconda-publish@v1.5.1
         with:
           subDir: 'conda'
           channels: '-c conda-forge -c bioconda -c defaults'
