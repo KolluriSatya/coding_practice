@@ -17,8 +17,8 @@ build['number'] = 1
 build['noarch'] = 'generic'
 
 requirements = yaml.comments.CommentedMap()
-requirements['host'] = ['python>=3.5', 'biopython', 'kma', 'wget', 'blast', 'cgecore', 'tabulate']
-requirements['run'] = ['python>=3.5', 'biopython', 'kma', 'blast', 'cgecore', 'tabulate']
+requirements['host'] = ['python', 'biopython', 'kma', 'wget', 'blast', 'cgecore', 'tabulate']
+requirements['run'] = ['python', 'biopython', 'kma', 'blast', 'cgecore', 'tabulate']
 
 about = yaml.comments.CommentedMap()
 about['home'] = 'https://bitbucket.org/genomicepidemiology/plasmidfinder'
