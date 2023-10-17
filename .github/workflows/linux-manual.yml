@@ -21,7 +21,7 @@ jobs:
       - name: publish-to-conda-linux
         uses: BEFH/anaconda-publish@v1.5.1
         with:
-          subDir: '/conda'
+          subDir: 'info/conda/'
           channels: 'bioconda'
           AnacondaToken: ${{ secrets.SATYAKP_CONDA_AUTH_TOKEN }}
           publish: true
