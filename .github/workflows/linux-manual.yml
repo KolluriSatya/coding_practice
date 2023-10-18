@@ -21,7 +21,7 @@ jobs:
       - name: Make conda yaml
         run: |
           pip install PyYAML
-          python make_conda_linux.py
+          python meta.yaml
 
       - uses: mamba-org/setup-micromamba@v1
         with:
