@@ -2,8 +2,10 @@ name: linux-build
 channels:
   - conda-forge
   - defaults
+  - genomicepidemiology
 dependencies:
   - mamba
   - python
   - boa
   - anaconda-client
+  - kma
