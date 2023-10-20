@@ -8,5 +8,3 @@ dependencies:
   - python
   - boa
   - anaconda-client
-  - kma
-  - tabulate

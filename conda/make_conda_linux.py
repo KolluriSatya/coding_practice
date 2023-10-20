@@ -14,10 +14,10 @@ source['url'] = 'https://bitbucket.org/genomicepidemiology/{}/get/{}.tar.gz'.for
 
 build = yaml.comments.CommentedMap()
 build['number'] = 1
-build['noarch'] = 'generic'
+build['noarch'] = 'python'
 
 requirements = yaml.comments.CommentedMap()
-requirements['host'] = ['python', 'biopython', 'kma', 'tabulate']
+requirements['host'] = ['python', 'biopython', 'kma', 'wget', 'blast', 'cgecore', 'tabulate']
 requirements['run'] = ['python']
 
 about = yaml.comments.CommentedMap()
