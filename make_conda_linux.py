@@ -6,7 +6,7 @@ sys.path = [os.path.join(os.path.dirname(os.path.realpath(__file__)), '')] + sys
 
 data = {
     "package": {
-        "name": "cgeccore"
+        "name": "cgeccore",
         "version": "1.5.6"
     },
     "source": {
