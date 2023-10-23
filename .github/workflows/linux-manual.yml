@@ -11,6 +11,6 @@ jobs:
         uses: BEFH/anaconda-publish@v1.5.1
         with:
           subDir: 'conda'
-          channels: 'conda-forge -c bioconda -c defaults'
+          channels: 'conda-forge -c defaults'
           AnacondaToken: ${{ secrets.SATYAKP_CONDA_AUTH_TOKEN }}
           publish: true
