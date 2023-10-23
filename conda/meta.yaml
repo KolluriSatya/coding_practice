@@ -1,9 +1,26 @@
-# This file created by conda-build 3.19.2
-# meta.yaml template originally from:
-# /opt/recipe, last modified Mon Nov  2 12:08:04 2020
-# ------------------------------------------------
+import yaml
+import os
+import sys
 
-package:
+sys.path = [os.path.join(os.path.dirname(os.path.realpath(__file__)), '')] + sys.path
+
+import src.resfinder.version as version
+
+    data = {
+"package": {
+    "name": "resfinder",
+    "version": version.__version__
+},
+"source": {
+    "url": "https://files.pythonhosted.org/packages/ce/9c/f87f17e82b6666e3d3214cdf2970e46585108b5821ef80d2d58bf4470e86/resfinder-4.3.3.tar.gz",
+    "sha256": "9b45c520ae8e29a7035665959b9250e6a8c2d43b389d3da8299b6d493d14d9b7"
+},
+"build": {
+    "number": 0,
+    "noarch": "python",
+
+
+    package:
     name: cgecore
     version: 1.5.6
 source:

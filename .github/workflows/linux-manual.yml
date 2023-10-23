@@ -1,16 +1,38 @@
-name: conda-linux-release
 on:
   workflow_dispatch:
+
 jobs:
   conda-noarch:
-    name: Linux Upload
-    runs-on: ubuntu-latest
+    name: ${{ matrix.os }}
+    runs-on: ${{ matrix.os }}
+    defaults:
+      run:
+        shell: bash -l {0}
+
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ ubuntu-latest ]
+
     steps:
-      - uses: actions/checkout@v1
-      - name: publish-to-conda-linux
-        uses: BEFH/anaconda-publish@v1.5.1
+      - name: checkout repository
+        uses: actions/checkout@v2
+
+      - name: Make conda yaml
+        run: |
+          pip install PyYAML
+          python make_conda_linux.py
+
+      - uses: mamba-org/setup-micromamba@v1
         with:
-          subDir: 'conda'
-          channels: 'conda-forge -c defaults'
-          AnacondaToken: ${{ secrets.SATYAKP_CONDA_AUTH_TOKEN }}
-          publish: true
+          environment-file: envs/linux-build.yml
+
+      - name: build conda package
+        run: |
+          conda install -c anaconda anaconda-client
+          conda mambabuild conda -c conda-forge --output-folder .
+
+      - name: upload conda package
+        run: |
+          anaconda -t ${{ secrets.SATYAKP_CONDA_AUTH_TOKEN }} upload --label main noarch/*.tar.bz2
+
