@@ -11,6 +11,7 @@ data = {
     },
     "source": {
         "url": "https://files.pythonhosted.org/packages/24/f0/f4507b608865e56757f80000c34405c8a43e973e888e11e6bdc18fe47ce1/cgecore-1.5.6.tar.gz",
+        "sha256": "310dbaf02c6791dcc17cff7b01930a6260d92328c07cfaaf431742f073fcc758"
     },
     "build": {
         "number": 0,
