@@ -1,9 +1,8 @@
 package:
-  name: cgecore
-  version: 1.5.6
-
+  name: tabulate
+  version: 0.9.0
 source:
-  url: https://files.pythonhosted.org/packages/24/f0/f4507b608865e56757f80000c34405c8a43e973e888e11e6bdc18fe47ce1/cgecore-1.5.6.tar.gz
+  url: https://files.pythonhosted.org/packages/ec/fe/802052aecb21e3797b8f7902564ab6ea0d60ff8ca23952079064155d1ae1/tabulate-0.9.0.tar.gz
 
 build:
   number: 0
@@ -18,18 +17,7 @@ requirements:
     - python
     - biopython
 
-test:
-  imports:
-    - cgecore
-    - cgecore.blaster
-    - cgecore.organisminfo
-    - cgecore.alignment
-    - cgecore.argumentparsing
-    - cgecore.cgefinder
-    - cgecore.cmdline
-    - cgecore.utility
-
 about:
-  home: https://bitbucket.org/genomicepidemiology/cgecore
-  summary: 'cgeccore test.'
+  home: https://bitbucket.org/genomicepidemiology/tabulate
+  summary: 'tabulate test.'
   license: Apache-2.0
