@@ -1,0 +1,16 @@
+on:
+  tags:
+
+jobs:
+    conda-linux:
+      name: Linux Upload
+      runs-on: ubuntu-latest
+      steps:
+        - uses: actions/checkout@v1
+        - name: publish-to-conda-linux
+          uses: BEFH/anaconda-publish@v1.5.1
+          with:
+            subDir: 'conda'
+            channels: 'conda-forge -c bioconda -c defaults'
+            AnacondaToken: ${{ secrets.SATYA_CONDA_AUTH_TOKEN }}
+            publish: true
