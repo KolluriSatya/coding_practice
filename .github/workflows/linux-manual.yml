@@ -35,4 +35,4 @@ jobs:
           
           - name: upload conda package
           run: |
-          anaconda -t ${{ secrets.SATYA_CONDA_AUTH_TOKEN }} upload --label main /*.tar.gz
+          anaconda -t ${{ secrets.SATYA_CONDA_AUTH_TOKEN }} upload --label main cgecore-1.5.6.tar.gz.tar.gz
