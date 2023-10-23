@@ -29,10 +29,8 @@ jobs:
 
       - name: build conda package
         run: |
-          conda install -c anaconda anaconda-client
           conda mambabuild conda -c conda-forge --output-folder .
-
-      - name: upload conda package
-        run: |
-          anaconda -t ${{ secrets.SATYAKP_CONDA_AUTH_TOKEN }} upload --label main noarch/*.tar.bz2
-
+          
+          - name: upload conda package
+          run: |
+          anaconda -t ${{ secrets.SATYA_CONDA_AUTH_TOKEN }} upload --label main noarch/*.tar.bz2
