@@ -1,0 +1,35 @@
+package:
+  name: cgecore
+  version: 1.5.6
+
+source:
+  url: https://files.pythonhosted.org/packages/24/f0/f4507b608865e56757f80000c34405c8a43e973e888e11e6bdc18fe47ce1/cgecore-1.5.6.tar.gz
+
+build:
+  number: 0
+  noarch: python
+  script: "{{ PYTHON }} -m pip install . --no-deps --ignore-installed -vv
+
+requirements:
+  host:
+    - python
+    - pip
+  run:
+    - python
+    - biopython
+
+test:
+  imports:
+    - cgecore
+    - cgecore.blaster
+    - cgecore.organisminfo
+    - cgecore.alignment
+    - cgecore.argumentparsing
+    - cgecore.cgefinder
+    - cgecore.cmdline
+    - cgecore.utility
+
+about:
+  home: https://bitbucket.org/genomicepidemiology/cgecore
+  summary: 'cgeccore test.'
+  license: Apache-2.0
