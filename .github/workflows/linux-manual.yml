@@ -23,7 +23,7 @@ jobs:
           pip install PyYAML
           pip install ruamel.yaml
           python conda/make_conda_linux.py
-          cat conda/meta.yaml
+          cat conda/meta.yaml.template
 
       - uses: mamba-org/setup-micromamba@v1
         with:
@@ -35,4 +35,4 @@ jobs:
           
           - name: upload conda package
           run: |
-          anaconda -t ${{ secrets.SATYA_CONDA_AUTH_TOKEN }} upload --label main noarch/*.tar.bz2
+          anaconda -t ${{ secrets.SATYA_CONDA_AUTH_TOKEN }} upload --label main noarch/*.tar.gz
