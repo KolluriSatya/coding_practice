@@ -30,7 +30,7 @@ jobs:
 
       - name: build conda package
         run: |
-          conda mambabuild conda -c conda-forge -c genomicepidemiology --output-folder .
+          conda mambabuild conda -c conda-forge -c genomicepidemiology -c defaults --output-folder .
 
       - name: upload conda package
         run: |
