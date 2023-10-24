@@ -14,11 +14,11 @@ source['url'] = 'https://bitbucket.org/genomicepidemiology/{}/get/{}.tar.gz'.for
 
 build = yaml.comments.CommentedMap()
 build['number'] = 1
-build['noarch'] = 'python'
+build['noarch'] = 'generic'
 
 requirements = yaml.comments.CommentedMap()
-requirements['host'] = ['python', 'biopython', 'kma', 'wget', 'blast', 'cgecore', 'tabulate']
-requirements['run'] = ['python']
+requirements['host'] = ['python', 'kma', 'wget']
+requirements['run'] = ['python', 'kma', 'biopython', 'tabulate', 'cgecore', 'blast']
 
 about = yaml.comments.CommentedMap()
 about['home'] = 'https://bitbucket.org/genomicepidemiology/plasmidfinder'
