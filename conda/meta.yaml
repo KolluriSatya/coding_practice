@@ -15,13 +15,13 @@ requirements:
     - kma
     - wget
     - biopython
-    - tabulate
-    - cgecore
-    - blast
   run:
     - python>=3.5
     - kma
     - biopython
+    - cgecore
+    - blast
+    - tabulate
 test:
   commands:
     - plasmidfinder.py -h | grep plasmidfinder.py >/dev/null
