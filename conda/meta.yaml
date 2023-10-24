@@ -11,15 +11,15 @@ build:
 
 requirements:
   host:
-    - python
+    - python==3.5
     - kma
     - wget
   run:
-    - python
+    - python==3.5
     - kma
     - biopython
-    - tabulate
-    - cgecore
+    - tabulate==0.7.7
+    - cgecore==1.5.5
     - blast
 test:
   commands:
