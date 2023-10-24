@@ -22,9 +22,7 @@ jobs:
 
       - name: Make conda yaml
         run: |
-          pip install PyYAML
-          pip install ruamel.yaml
-          python conda/make_conda_linux.py
+          cat conda/meta.yaml
 
       - uses: mamba-org/setup-micromamba@v1
         with:
