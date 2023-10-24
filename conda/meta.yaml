@@ -3,7 +3,7 @@ package:
   version: 2.1.6
 
 source:
-  'url': 'https://bitbucket.org/genomicepidemiology/{}/get/{}.tar.gz'.format(package['name'], package['version'])
+  url: https://github.com/genomicepidemiology/kmergenetyper/archive/refs/tags/{}.tar.gz.format(version.__version__),
 
 build:
   number: 1
