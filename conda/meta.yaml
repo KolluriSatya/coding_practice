@@ -3,7 +3,8 @@ package:
   version: 2.1.6
 
 source:
-  'url': 'https://github.com/genomicepidemiology/{}/releases/tags/{}.tar.gz'.format(package['name'], package['version'])
+  url: https://github.com/genomicepidemiology/plasmidfinder/releases/tags/v2.1.6
+
 build:
   number: 1
   noarch: generic
