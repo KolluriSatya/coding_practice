@@ -14,13 +14,14 @@ requirements:
     - python>=3.5
     - kma
     - wget
-  run:
-    - python>=3.5
-    - kma
     - biopython
     - tabulate==0.7.7
     - cgecore==1.5.5
     - blast
+  run:
+    - python>=3.5
+    - kma
+    - biopython
 test:
   commands:
     - plasmidfinder.py -h | grep plasmidfinder.py >/dev/null
