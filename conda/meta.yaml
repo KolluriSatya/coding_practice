@@ -15,8 +15,8 @@ requirements:
     - kma
     - wget
     - biopython
-    - tabulate==0.7.7
-    - cgecore==1.5.5
+    - tabulate
+    - cgecore
     - blast
   run:
     - python>=3.5
