@@ -3,7 +3,7 @@ package:
   version: 2.1.6
 
 source:
-  url: https://github.com/genomicepidemiology/plasmidfinder/releases/tags/v2.1.6
+  url: https://bitbucket.org/genomicepidemiology/PlasmidFinder/get/2.1.6.tar.gz
 
 build:
   number: 1
@@ -14,7 +14,7 @@ requirements:
     - python>=3.5
     - kma
     - wget
-run:
+  run:
     - python>=3.5
     - kma
     - biopython
