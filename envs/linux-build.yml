@@ -3,6 +3,7 @@ channels:
   - conda-forge
   - genomicepidemiology
   - defaults
+  - bioconda
 dependencies:
   - mamba
   - python
