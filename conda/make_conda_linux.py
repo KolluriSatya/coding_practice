@@ -13,16 +13,17 @@ source = yaml.comments.CommentedMap()
 source['url'] = 'https://bitbucket.org/genomicepidemiology/{}/get/{}.tar.gz'.format(package['name'], package['version'])
 
 build = yaml.comments.CommentedMap()
-build['number'] = 1
-#build['noarch'] = 'generic'
+build['number'] = 0
+build['noarch'] = 'generic'
 
 requirements = yaml.comments.CommentedMap()
+requirements['build'] = ['make', '{{ compiler(\'c\') }}']
 requirements['host'] = ['python', 'kma', 'wget']
 requirements['run'] = ['python', 'kma', 'biopython', 'tabulate', 'cgecore', 'blast']
 
 about = yaml.comments.CommentedMap()
 about['home'] = 'https://bitbucket.org/genomicepidemiology/plasmidfinder'
-about['summary'] = 'plasmidfinder test'
+about['summary'] = 'plasmidfinder chk.'
 about['license'] = 'Apache-2.0'
 
 extra = yaml.comments.CommentedMap()
@@ -39,7 +40,6 @@ data['about'] = about
 data['extra'] = extra
 
 # Serialize the data to YAML and print it
-yaml = yaml(typ='unsafe', pure=True)
 yaml_str = yaml.dump(data, Dumper=yaml.RoundTripDumper).replace("\"{{", "{{").replace("}}\"", "}}")
 print(yaml_str)
 
