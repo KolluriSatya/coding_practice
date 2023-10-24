@@ -15,6 +15,7 @@ requirements:
     - kma
     - wget
     - biopython
+    - geopandas
   run:
     - python>=3.5
     - kma
