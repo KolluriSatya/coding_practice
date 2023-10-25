@@ -11,13 +11,13 @@ build:
 
 requirements:
   host:
-    - python>=3.5
+    - python>=3.6
     - kma
     - wget
     - biopython
     - geopandas
   run:
-    - python>=3.5
+    - python>=3.6
     - kma
     - biopython
     - cgecore
