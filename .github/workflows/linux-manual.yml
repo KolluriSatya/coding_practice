@@ -34,4 +34,4 @@ jobs:
 
       - name: upload conda package
         run: |
-          anaconda -t ${{ secrets.SATYA_CONDA_AUTH_TOKEN }} upload --label main noarch/*.tar.bz2
+          anaconda -t ${{ secrets.SATYA_CONDA_AUTH_TOKEN }} upload --lsbel main linux-64/*.tar.bz2
