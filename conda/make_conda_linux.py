@@ -34,7 +34,7 @@ data['about'] = about
 data['extra'] = extra
 
 # Serialize the data to YAML and print it
-yaml_str = yaml.dump(data, type=yaml.RoundTripLoader).replace("\"{{", "{{").replace("}}\"", "}}")
+yaml_str = yaml.dump(data, dump=yaml.RoundTripLoader).replace("\"{{", "{{").replace("}}\"", "}}")
 print(yaml_str)
 
 with open('conda/meta.yaml', 'w') as f:
