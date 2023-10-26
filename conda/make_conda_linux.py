@@ -3,7 +3,6 @@ import ruamel.yaml as yaml
 # Create an ordered dictionary for each section
 package = yaml.comments.CommentedMap()
 package['name'] = 'cgecore'
-package['version'] = '1.5.6'
 
 source = yaml.comments.CommentedMap()
 source['url'] = 'https://files.pythonhosted.org/packages/65/40/34c5fe13ef544ed241fb2dd621d0160c065652a0575137b5ad66e5b279c8/ruamel.yaml-0.18.2.tar.gz'
