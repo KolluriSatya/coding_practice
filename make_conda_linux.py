@@ -6,7 +6,8 @@ sys.path = [os.path.join(os.path.dirname(os.path.realpath(__file__)), '')] + sys
 
 data = {
     "package": {
-        "name": "cgecore"
+        "name": "cgecore",
+        "version": "1.5.6"
     },
     "source": {
         "url": "https://files.pythonhosted.org/packages/24/f0/f4507b608865e56757f80000c34405c8a43e973e888e11e6bdc18fe47ce1/cgecore-1.5.6.tar.gz",
