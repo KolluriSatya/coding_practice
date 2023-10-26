@@ -9,7 +9,7 @@ with open("setup.py", 'r') as f:
             version = l.split('=')[1].strip().strip('"')
 
 source = yaml.comments.CommentedMap()
-source['url'] = 'https://files.pythonhosted.org/packages/24/f0/f4507b608865e56757f80000c34405c8a43e973e888e11e6bdc18fe47ce1/{}.tar.gz'.format(package['name'], package['version'])
+source['url'] = 'https://files.pythonhosted.org/packages/24/f0/f4507b608865e56757f80000c34405c8a43e973e888e11e6bdc18fe47ce1/{}.tar.gz'.format(package['name'])
 
 build = yaml.comments.CommentedMap()
 build['number'] = 0
