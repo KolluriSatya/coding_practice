@@ -3,14 +3,17 @@ import os
 import sys
 
 sys.path = [os.path.join(os.path.dirname(os.path.realpath(__file__)), '')] + sys.path
-
+with open("cgecore/__init__.py", 'r') as f:
+    for l in f:
+        if l.startswith('__version__'):
+            version = l.split('=')[1].strip().strip('"')
 data = {
     "package": {
         "name": "cgecore",
-        "version": version.__version__
+        "version": "version"
     },
     "source": {
-        "url": "https://github.com/genomicepidemiology/cgecore/archive/refs/tags/{}.tar.gz".format(version.__version__),
+        "url": "https://github.com/genomicepidemiology/cgecore/archive/refs/tags/{}.tar.gz".format(version),
     },
     "build": {
         "number": 0,
