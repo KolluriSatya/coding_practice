@@ -6,7 +6,7 @@ package['name'] = 'cgecore'
 package['version'] = '1.5.6'
 
 source = yaml.comments.CommentedMap()
-source['url'] = 'https://files.pythonhosted.org/packages/24/f0/f4507b608865e56757f80000c34405c8a43e973e888e11e6bdc18fe47ce1/{}.tar.gz'
+source['url'] = 'https://files.pythonhosted.org/packages/24/f0/f4507b608865e56757f80000c34405c8a43e973e888e11e6bdc18fe47ce1/{}.tar.gz'.format(package['name'])
 
 build = yaml.comments.CommentedMap()
 build['number'] = 0
