@@ -6,11 +6,10 @@ sys.path = [os.path.join(os.path.dirname(os.path.realpath(__file__)), '')] + sys
 
 data = {
     "package": {
-        "name": "cgecore",
-        "version": version
+        "name": "cgecore"
     },
     "source": {
-        "url": "https://github.com/genomicepidemiology/cgecore/archive/refs/tags/{}.tar.gz".format(version),
+        "url": "https://github.com/genomicepidemiology/cgecore/archive/refs/tags/{}.tar.gz",
     },
     "build": {
         "number": 0,
