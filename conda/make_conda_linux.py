@@ -1,4 +1,5 @@
 import ruamel.yaml as yaml
+from ruamel.yaml.representer import SafeRepresenter
 
 # Create an ordered dictionary for each section
 package = yaml.comments.CommentedMap()
@@ -34,7 +35,6 @@ data['about'] = about
 data['extra'] = extra
 
 # Serialize the data to YAML and print it
-yaml=YAML(typ='unsafe', pure=True)
 yaml_str = yaml.dump(data, Dumper=yaml.RoundTripDumper).replace("\"{{", "{{").replace("}}\"", "}}")
 print(yaml_str)
 
