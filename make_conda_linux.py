@@ -9,7 +9,7 @@ data = {
         "name": "cgecore"
     },
     "source": {
-        "url": "https://github.com/genomicepidemiology/cgecore/archive/refs/tags/{}.tar.gz",
+        "url": "https://github.com/genomicepidemiology/cgecore/archive/refs/tags/{}.tar.gz.format(name),",
     },
     "build": {
         "number": 0,
