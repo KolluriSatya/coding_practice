@@ -4,12 +4,15 @@ import sys
 
 sys.path = [os.path.join(os.path.dirname(os.path.realpath(__file__)), '')] + sys.path
 
+import cgecore.version as version
+
 data = {
     "package": {
-        "name": "cgecore"
+        "name": "cgecore",
+        "version": version.__version__
     },
     "source": {
-        "url": "https://github.com/genomicepidemiology/cgecore/archive/refs/tags/{}.tar.gz".format(name),
+        "url": "https://github.com/genomicepidemiology/cgecore/archive/refs/tags/{}.tar.gz".format(version.__version__),
     },
     "build": {
         "number": 0,
