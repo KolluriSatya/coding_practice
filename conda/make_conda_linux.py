@@ -1,4 +1,5 @@
 import ruamel.yaml as yaml
+buf = ruamel.yaml.compat.StringIO()
 
 # Create an ordered dictionary for each section
 package = yaml.comments.CommentedMap()
@@ -34,7 +35,7 @@ data['about'] = about
 data['extra'] = extra
 
 # Serialize the data to YAML and print it
-yaml_str = yaml.dump(data)
+yaml_str = yaml.dump(data, buf)
 print(yaml_str)
 
 with open('conda/meta.yaml', 'w') as f:
