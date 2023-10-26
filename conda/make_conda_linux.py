@@ -5,7 +5,7 @@ package = yaml.comments.CommentedMap()
 package['name'] = 'cgecore'
 with open("setup.py", 'r') as f:
     for l in f:
-        if l.startswith('version'):
+        if l.startswith('__version__'):
             version = l.split('=')[1].strip().strip('"')
 
 source = yaml.comments.CommentedMap()
