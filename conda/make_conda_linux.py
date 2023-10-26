@@ -6,7 +6,7 @@ package['name'] = 'cgecore'
 package['version'] = '1.5.6'
 
 source = yaml.comments.CommentedMap()
-source['url'] = 'https://files.pythonhosted.org/packages/24/f0/f4507b608865e56757f80000c34405c8a43e973e888e11e6bdc18fe47ce1/{}.tar.gz'.format(package['name'])
+source['url'] = 'https://files.pythonhosted.org/packages/65/40/34c5fe13ef544ed241fb2dd621d0160c065652a0575137b5ad66e5b279c8/ruamel.yaml-0.18.2.tar.gz'
 
 build = yaml.comments.CommentedMap()
 build['number'] = 0
