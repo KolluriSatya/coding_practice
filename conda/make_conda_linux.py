@@ -34,6 +34,7 @@ data['about'] = about
 data['extra'] = extra
 
 # Serialize the data to YAML and print it
+data = YAML(typ="safe")
 yaml_str = yaml.dump(data, Dumper=yaml.RoundTripDumper).replace("\"{{", "{{").replace("}}\"", "}}")
 print(yaml_str)
 
