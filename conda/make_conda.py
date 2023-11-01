@@ -37,7 +37,10 @@ data['extra'] = extra
 
 # Serialize the data to YAML and print it
 yaml = ruamel.yaml.YAML(typ='unsafe', pure=True)
-yaml_str = yaml.dump(data, sys.stdout).replace("\"{{", "{{")
+
+yaml_str = yaml.dump(data, sys.stdout)
+if(yaml_str) :
+    yaml_str = yaml_str.replace("\"{{", "{{")
 if(yaml_str) :
     yaml_str = yaml_str.replace("}}\"", "}}")
 print(yaml_str)
