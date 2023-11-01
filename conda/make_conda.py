@@ -45,5 +45,6 @@ if(yaml_str) :
     yaml_str = yaml_str.replace("}}\"", "}}")
 print(yaml_str)
 
-with open('conda/meta.yaml', 'w') as f:
-    f.write(yaml_str)
+if(yaml_str) :
+    with open('conda/meta.yaml', 'w') as f:
+        f.write(yaml_str)
