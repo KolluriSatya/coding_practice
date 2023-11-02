@@ -14,7 +14,7 @@ data = {
     },
     "build": {
         "number": 0,
-        "noarch": "python",
+        "noarch": "generic",
         "script": "{{ PYTHON }} -m pip install . --no-deps --ignore-installed -vvv"
     },
     "requirements": {
