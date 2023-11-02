@@ -14,7 +14,6 @@ data = {
     },
     "build": {
         "number": 0,
-        "noarch": "generic",
         "script": "{{ PYTHON }} -m pip install . --no-deps --ignore-installed -vvv"
     },
     "requirements": {
@@ -41,8 +40,7 @@ data = {
 
 # Convert the data to YAML and print it
 os.system('mkdir conda_1')
-yaml_str = yaml.dump(data, Dumper=yaml.RoundTripDumper).replace("\"{{", "{{").replace("}}\"", "}}")
-print(yaml_str)
+yaml_str = yaml.dump(data, sort_keys=False)
 
 with open('conda_1/meta.yaml', 'w') as f:
     f.write(yaml_str)
