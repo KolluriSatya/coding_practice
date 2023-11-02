@@ -1,33 +1,37 @@
-import sys
-import ruamel.yaml
+import ruamel.yaml as yaml
 
 # Create an ordered dictionary for each section
-package = ruamel.yaml.comments.CommentedMap()
+package = yaml.comments.CommentedMap()
 package['name'] = 'plasmidfinder'
-package['version'] = '2.1.6'
 
-source = ruamel.yaml.comments.CommentedMap()
-source['url'] = 'https://bitbucket.org/genomicepidemiology/plasmidfinder/get/2.1.6.tar.gz'
+with open('version.py', 'r') as f:
+    for line in f:
+        if line.startswith('Plasmidfinder'):
+            package['version'] = line.split()[2].replace("\"", "")
 
-build = ruamel.yaml.comments.CommentedMap()
-build['number'] = 1
+source = yaml.comments.CommentedMap()
+source['url'] = 'https://bitbucket.org/genomicepidemiology/{}/get/{}.tar.gz'.format(package['name'], package['version'])
+
+build = yaml.comments.CommentedMap()
+build['number'] = 0
 #build['noarch'] = 'generic'
 
-requirements = ruamel.yaml.comments.CommentedMap()
+requirements = yaml.comments.CommentedMap()
 requirements['host'] = ['python>=3.5', 'wget', 'kma']
 requirements['run'] = ['python>=3.5', 'wget', 'biopython', 'tabulate', 'cgecore', 'blast']
 
-about = ruamel.yaml.comments.CommentedMap()
+about = yaml.comments.CommentedMap()
 about['home'] = 'https://bitbucket.org/genomicepidemiology/plasmidfinder'
 about['summary'] = 'PlasmidFinder service contains one python script plasmidfinder.py which is the script of the latest version of the PlasmidFinder service. The service identifies plasmids in total or partial sequenced isolates of bacteria.'
 about['license'] = 'Apache-2.0'
 
-extra = ruamel.yaml.comments.CommentedMap()
-identifiers = ruamel.yaml.comments.CommentedMap()
+extra = yaml.comments.CommentedMap()
+identifiers = yaml.comments.CommentedMap()
+identifiers['doi'] = '10.1186/s12859-018-2336-6'
 extra['identifiers'] = identifiers
 
 # Create a dictionary for the entire YAML content
-data = ruamel.yaml.comments.CommentedMap()
+data = yaml.comments.CommentedMap()
 data['package'] = package
 data['source'] = source
 data['build'] = build
@@ -36,15 +40,8 @@ data['about'] = about
 data['extra'] = extra
 
 # Serialize the data to YAML and print it
-yaml = ruamel.yaml.YAML(typ='unsafe', pure=True)
-
-yaml_str = yaml.dump(data, Dumper=yaml.RoundTripDumper)
-if(yaml_str) :
-    yaml_str = yaml_str.replace("\"{{", "{{")
-if(yaml_str) :
-    yaml_str = yaml_str.replace("}}\"", "}}")
+yaml_str = yaml.dump(data, Dumper=yaml.RoundTripDumper).replace("\"{{", "{{").replace("}}\"", "}}")
 print(yaml_str)
 
-if(yaml_str) :
-    with open('conda/meta.yaml', 'w') as f:
-        f.write(yaml_str)
+with open('conda/meta.yaml', 'w') as f:
+    f.write(yaml_str)
