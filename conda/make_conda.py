@@ -14,16 +14,16 @@ data = {
     },
     "build": {
         "number": 0,
-        "script": "{{ PYTHON }} -m pip install plasmidfinder.py --no-deps --ignore-installed -vvv"
+        "script": "{{ PYTHON }} -m pip install . --no-deps --ignore-installed -vvv"
     },
     "requirements": {
         "host": [
-            "python>=3.5",
+            "python",
             "wget",
             "kma"
         ],
         "run": [
-            "python>=3.5",
+            "python",
             "wget",
             "biopython",
             "tabulate",
