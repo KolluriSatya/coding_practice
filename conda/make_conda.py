@@ -4,8 +4,6 @@ import sys
 
 sys.path = [os.path.join(os.path.dirname(os.path.realpath(__file__)), '')] + sys.path
 
-import kmergenetyper.version as version
-
 data = {
     "package": {
         "name": "plasmidfinder",
