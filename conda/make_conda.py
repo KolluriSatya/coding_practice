@@ -40,8 +40,8 @@ data = {
 }
 
 # Convert the data to YAML and print it
-os.system('mkdir conda')
+os.system('mkdir conda_1')
 yaml_str = yaml.dump(data, sort_keys=False)
 
-with open('conda/meta.yaml', 'w') as f:
+with open('conda_1/meta.yaml', 'w') as f:
     f.write(yaml_str)
