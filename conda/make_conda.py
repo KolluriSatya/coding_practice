@@ -14,7 +14,7 @@ data = {
     },
     "build": {
         "number": 0,
-        "script": "{{ PYTHON }} -m pip install . --no-deps --ignore-installed -vvv"
+        "script": "{{ PYTHON }} -m pip install plasmidfinder.py --no-deps --ignore-installed -vvv"
     },
     "requirements": {
         "host": [
