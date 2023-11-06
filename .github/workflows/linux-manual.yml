@@ -29,6 +29,7 @@ jobs:
         with:
           environment-file: envs/linux-build.yml
 
+
       - name: upload conda package
         run: |
-          anaconda -t ${{ secrets.SATYA_CONDA_AUTH_TOKEN }} upload --label main noarch/*.tar.bz2
+          anaconda -t ${{ secrets.SATYA_CONDA_AUTH_TOKEN }} upload --label main /*.tar.bz2
