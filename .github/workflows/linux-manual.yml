@@ -29,10 +29,6 @@ jobs:
         with:
           environment-file: envs/linux-build.yml
 
-      - name: build conda package
-        run: |
-          conda mambabuild conda -c conda-forge  -c genomicepidemiology -c bioconda -c defaults --output-folder .
-
       - name: upload conda package
         run: |
           anaconda -t ${{ secrets.SATYA_CONDA_AUTH_TOKEN }} upload --label main noarch/*.tar.bz2
