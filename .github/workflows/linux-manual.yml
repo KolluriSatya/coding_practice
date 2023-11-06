@@ -32,7 +32,7 @@ jobs:
       - name: build conda package
         run: |
           conda install -c anaconda anaconda-client
-          conda mambabuild -c conda-forge -m conda https://bitbucket.org/genomicepidemiology/plasmidfinder/get/2.1.6.tar.gz --output-folder .
+          conda mambabuild conda -c conda-forge -c genomicepidemiology -c defaults --output-folder .
 
       - name: upload conda package
         run: |
