@@ -24,6 +24,7 @@ jobs:
         run: |
           pip install PyYAML
           python conda/make_conda.py
+          cat conda_1/metadata.yaml
 
       - uses: mamba-org/setup-micromamba@v1
         with:
