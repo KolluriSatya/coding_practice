@@ -24,7 +24,6 @@ jobs:
         run: |
           pip install PyYAML
           python conda/make_conda.py
-          cat conda_1/metadata.yaml
 
       - uses: mamba-org/setup-micromamba@v1
         with:
@@ -32,7 +31,6 @@ jobs:
 
       - name: build conda package
         run: |
-          conda install -c anaconda anaconda-client
           conda mambabuild conda -c conda-forge  -c genomicepidemiology -c defaults --output-folder .
 
       - name: upload conda package
