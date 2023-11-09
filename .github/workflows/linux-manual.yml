@@ -31,7 +31,7 @@ jobs:
 
       - name: build conda package
         run: |
-            conda mambabuild -m noarch/*.tar.bz2 -c conda-forge --output-folder .
+            conda mambabuild conda --output-folder .
 
       - name: upload conda package
         run: |
