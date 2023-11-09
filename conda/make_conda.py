@@ -7,7 +7,7 @@ package['name'] = 'plasmidfinder'
 with open('version.py', 'r') as f:
     for line in f:
         if line.startswith('PLASMIDFINDER_VERSION'):
-            package['version'] = line.split()[2].replace("\"", "")
+            package['version'] = line.split()[1].replace("\"", "")
 
 source = yaml.comments.CommentedMap()
 source['url'] = 'https://bitbucket.org/genomicepidemiology/{}/get/{}.tar.gz'.format(package['name'], package['version'])
