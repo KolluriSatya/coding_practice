@@ -39,7 +39,7 @@ data = {
 }
 
 # Convert the data to YAML and print it
-os.system('mkdir conda_1')
+os.system('mkdir conda_1'),
 yaml_str = yaml.dump(data, sort_keys=False)
 
 with open('conda_1/meta.yaml', 'w') as f:
