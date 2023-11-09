@@ -1,8 +1,7 @@
-import ruamel.yaml as YAML
-
+import ruamel.yaml
 
 # Create an ordered dictionary for each section
-yaml = YAML(typ='unsafe', pure=True)
+yaml = ruamel.yaml. YAML(typ='unsafe', pure=True)
 package = yaml.comments.CommentedMap()
 package['name'] = 'plasmidfinder'
 
