@@ -40,8 +40,12 @@ data['about'] = about
 data['extra'] = extra
 
 # Serialize the data to YAML and print it
-yaml_str = yaml.dump(data, Dumper=yaml.RoundTripDumper).replace("\"{{", "{{").replace("}}\"", "}}")
-print(yaml_str)
 
+yaml_str = yaml.dump(data, Dumper=yaml.RoundTripDumper).replace("\"{{", "{{").replace("}}\"", "}}")
+yaml = ruamel.yaml.YAML()
+data = yaml.load(yaml_str)
+yaml.dump(data)
+print(yaml_dump(data))
+yaml.dump(data, sys.stdout)
 with open('conda/meta.yaml', 'w') as f:
     f.write(yaml_str)
