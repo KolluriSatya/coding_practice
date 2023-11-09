@@ -29,7 +29,7 @@ data = {
             "tabulate",
             "cgecore",
             "blast"
-        ],
+        ]
     },
     "about": {
         "home": "https://github.com/genomicepidemiology/plasmidfinder",
