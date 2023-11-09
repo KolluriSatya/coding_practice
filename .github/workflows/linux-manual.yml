@@ -29,9 +29,16 @@ jobs:
         with:
           environment-file: envs/linux-build.yml
 
+      - name: Install boa
+        shell: bash -l {0}
+        run: |
+          pip install .
+
       - name: build conda package
         run: |
-            conda mambabuild conda -c conda-forge --output-folder .
+          conda config --add channels conda-forge   
+          conda config --set channel_priority strict
+          conda mambabuild conda --output-folder .
 
       - name: upload conda package
         run: |
