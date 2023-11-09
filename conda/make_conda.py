@@ -1,46 +1,47 @@
-import yaml
-import os
-import sys
+import ruamel.yaml as yaml
 
-sys.path = [os.path.join(os.path.dirname(os.path.realpath(__file__)), '')] + sys.path
+# Create an ordered dictionary for each section
+package = yaml.comments.CommentedMap()
+package['name'] = 'plasmidfinder'
 
-data = {
-    "package": {
-        "name": "plasmidfinder",
-        "version": "2.1.6"
-    },
-    "source": {
-        "url": "https://bitbucket.org/genomicepidemiology/plasmidfinder/get/2.1.6.tar.gz",
-    },
-    "build": {
-        "number": 0,
-        "script": "{{ PYTHON }} -m pip install . --no-deps --ignore-installed -vvv"
-    },
-    "requirements": {
-        "host": [
-            "python",
-            "wget",
-            "kma"
-        ],
-        "run": [
-            "python",
-            "wget",
-            "biopython",
-            "tabulate",
-            "cgecore",
-            "blast"
-        ]
-    },
-    "about": {
-        "home": "https://github.com/genomicepidemiology/plasmidfinder",
-        "summary": "plasmidfinder test.",
-        "license": "Apache-2.0"
-    }
-}
+with open('version.py', 'r') as f:
+    for line in f:
+        if line.startswith('PLASMIDFINDER_VERSION'):
+            package['version'] = line.split()[2].replace("\"", "")
 
-# Convert the data to YAML and print it
-os.system('mkdir conda_1'),
-yaml_str = yaml.dump(data, sort_keys=False)
+source = yaml.comments.CommentedMap()
+source['url'] = 'https://bitbucket.org/genomicepidemiology/{}/get/{}.tar.gz'.format(package['name'], package['version'])
 
-with open('conda_1/meta.yaml', 'w') as f:
+build = yaml.comments.CommentedMap()
+build['number'] = 0
+build['noarch'] = 'generic'
+
+requirements = yaml.comments.CommentedMap()
+requirements['build'] = ['python>=3.5']
+requirements['host'] = ['python>=3.5', 'wget', 'kma']
+requirements['run'] = ['python>=3.5', 'wget', 'biopython', 'tabulate', 'cgecore', 'blast']
+
+about = yaml.comments.CommentedMap()
+about['home'] = 'https://bitbucket.org/genomicepidemiology/plasmidfinder'
+about['summary'] = 'plasmidfinder test'
+about['license'] = 'Apache-2.0'
+
+extra = yaml.comments.CommentedMap()
+identifiers = yaml.comments.CommentedMap()
+extra['identifiers'] = identifiers
+
+# Create a dictionary for the entire YAML content
+data = yaml.comments.CommentedMap()
+data['package'] = package
+data['source'] = source
+data['build'] = build
+data['requirements'] = requirements
+data['about'] = about
+data['extra'] = extra
+
+# Serialize the data to YAML and print it
+yaml_str = yaml.dump(data, Dumper=yaml.RoundTripDumper).replace("\"{{", "{{").replace("}}\"", "}}")
+print(yaml_str)
+
+with open('conda/meta.yaml', 'w') as f:
     f.write(yaml_str)
