@@ -1,7 +1,9 @@
 import ruamel.yaml
 
-# Create an ordered dictionary for each section
+# Create a YAML object with 'unsafe' and 'pure' options
 yaml = ruamel.yaml. YAML(typ='unsafe', pure=True)
+
+# Create an ordered dictionary for each section
 package = yaml.comments.CommentedMap()
 package['name'] = 'plasmidfinder'
 
@@ -41,8 +43,6 @@ data['about'] = about
 data['extra'] = extra
 
 # Serialize the data to YAML and print it
-yaml_str = yaml.dump(data, Dumper=yaml.RoundTripDumper).replace("\"{{", "{{").replace("}}\"", "}}")
-print(yaml_str)
-
+yaml_str = yaml.dump(data, sys.stdout)
 with open('conda/meta.yaml', 'w') as f:
     f.write(yaml_str)
