@@ -8,7 +8,7 @@ source['url'] = 'https://bitbucket.org/genomicepidemiology/{}/get/2.1.6.tar.gz'.
 
 build = yaml.comments.CommentedMap()
 build['number'] = 0
-build['noarch'] = 'generic'
+build['noarch'] = 'python'
 
 requirements = yaml.comments.CommentedMap()
 requirements['build'] = ['python']
