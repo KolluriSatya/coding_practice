@@ -1,8 +1,5 @@
 import ruamel.yaml
 
-# Create a YAML object with 'unsafe' and 'pure' options
-yaml = ruamel.yaml. YAML(typ='unsafe', pure=True)
-
 # Create an ordered dictionary for each section
 package = yaml.comments.CommentedMap()
 package['name'] = 'plasmidfinder'
