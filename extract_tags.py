@@ -4,7 +4,7 @@ import requests
 def get_commit_tags(commit_sha):
     repo = os.environ['GITHUB_REPOSITORY']
     headers = {
-        'Authorization': f'token {os.environ["GITHUB_TOKEN"]}',
+        'Authorization': f'token {os.environ["secrets.SATYA_CONDA_AUTH_TOKEN"]}',
         'Accept': 'application/vnd.github.v3+json'
     }
     response = requests.get(f'https://api.github.com/repos/{repo}/commits/{commit_sha}/tags', headers=headers)
