@@ -26,9 +26,9 @@ data = {
             "python >=3.5",
             "biopython",
             "kma >=1.4.9",
+            "blast",
             "cgecore >=1.5.5",
-            "tabulate >=0.7.7",
-            "blast >=2.15.0"
+            "tabulate >=0.7.7"
         ]
     },
     "about": {
