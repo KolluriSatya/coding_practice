@@ -7,10 +7,10 @@ sys.path = [os.path.join(os.path.dirname(os.path.realpath(__file__)), '')] + sys
 data = {
     "package": {
         "name": "plasmidfinder",
-        "version": version
+        "version": "2.1.6"
     },
     "source": {
-        "url": "https://github.com/genomicepidemiology/plasmidfinder/archive/refs/tags/{version}.tar.gz"
+        "url": "https://github.com/genomicepidemiology/plasmidfinder/archive/refs/tags/2.1.6.tar.gz"
     },
     "build": {
         "number": 0,
