@@ -6,11 +6,7 @@ yaml = ruamel.yaml. YAML(typ='unsafe', pure=True)
 # Create an ordered dictionary for each section
 package = yaml.comments.CommentedMap()
 package['name'] = 'plasmidfinder'
-
-with open('version.py', 'r') as f:
-    for line in f:
-        if line.startswith('PLASMIDFINDER_VERSION'):
-            package['version'] = line.split()[1].replace("\"", "")
+package['version'] = '2.1.6'
 
 source = yaml.comments.CommentedMap()
 source['url'] = 'https://bitbucket.org/genomicepidemiology/{}/get/{}.tar.gz'.format(package['name'], package['version'])
