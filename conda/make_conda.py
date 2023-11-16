@@ -1,4 +1,6 @@
 import ruamel.yaml as yaml
+import io
+
 
 # Create an ordered dictionary for each section
 package = yaml.comments.CommentedMap()
@@ -34,9 +36,18 @@ data['requirements'] = requirements
 data['about'] = about
 data['extra'] = extra
 
+#create data outstream
+output_stream = io.StringIO()
+
+
 # Serialize the data to YAML and print it
 yaml = yaml.YAML(typ='unsafe', pure=True)
-yaml_str = yaml.dump(data).replace("\"{{", "{{").replace("}}\"", "}}")
+
+# Dump the data using the YAML instance into the output stream
+yaml.dump(data, output_stream)
+
+# Get the YAML string from the output stream
+yaml_str = output_stream.getvalue().replace("\"{{", "{{").replace("}}\"", "}}")
 print(yaml_str)
 
 with open('conda/meta.yaml', 'w') as f:
