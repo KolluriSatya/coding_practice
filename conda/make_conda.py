@@ -1,59 +1,45 @@
-import ruamel.yaml as yaml
-import io
+import yaml
+import os
 import sys
 
-# Create an ordered dictionary for each section
-package = yaml.comments.CommentedMap()
-package['name'] = 'plasmidfinder'
+sys.path = [os.path.join(os.path.dirname(os.path.realpath(__file__)), '')] + sys.path
 
-# Load your YAML content
-with open('conda/meta.yaml', 'w') as f:
-    f.write(yaml_str)
+data = {
+    "package": {
+        "name": "plasmidfinder",
+        "version": version.__version__
+    },
+    "source": {
+        "url": "https://github.com/genomicepidemiology/kmergenetyper/archive/refs/tags/{}.tar.gz".format(version.__version__),
+    },
+    "build": {
+        "number": 0,
+        "noarch": "generic",
+    },
+    "requirements": {
+        "host": [
+            "python >=3.6",
+            "wget",
+            "kma"
+        ],
+        "run": [
+            "python >=3.6",
+            "kma",
+            "cgecore",
+            "tabulate",
+            "biopython"
+        ]
+    },
+    "about": {
+        "home": "https://github.com/genomicepidemiology/plasmidfinder",
+        "summary": "plasmidfinder test.",
+        "license": "Apache-2.0"
+    }
+}
 
-source = yaml.comments.CommentedMap()
-source['url'] = 'https://bitbucket.org/genomicepidemiology/{}/get/2.1.6.tar.gz'.format(package['name'])
-
-build = yaml.comments.CommentedMap()
-build['number'] = 0
-build['noarch'] = 'python'
-
-requirements = yaml.comments.CommentedMap()
-requirements['build'] = ['python']
-requirements['host'] = ['python', 'wget', 'biopython', 'tabulate', 'cgecore']
-requirements['run'] = ['python', 'wget', 'biopython', 'tabulate', 'cgecore']
-
-about = yaml.comments.CommentedMap()
-about['home'] = 'https://bitbucket.org/genomicepidemiology/plasmidfinder'
-about['summary'] = 'plasmidfinder test.'
-about['license'] = 'Apache-2.0'
-
-extra = yaml.comments.CommentedMap()
-identifiers = yaml.comments.CommentedMap()
-identifiers['doi'] = 'doi:10.1093/bioinformatics/btac774'
-extra['identifiers'] = identifiers
-
-# Create a dictionary for the entire YAML content
-data = yaml.comments.CommentedMap()
-data['package'] = package
-data['source'] = source
-data['build'] = build
-data['requirements'] = requirements
-data['about'] = about
-data['extra'] = extra
-
-#create data outstream
-output_stream = io.StringIO()
-
-
-# Serialize the data to YAML and print it
-yaml = yaml.YAML(typ='unsafe', pure=True)
-
-# Dump the data using the YAML instance into the output stream
-yaml.dump(data, output_stream)
-
-# Get the YAML string from the output stream
-yaml_str = output_stream.getvalue().replace("\"{{", "{{").replace("}}\"", "}}")
-print(yaml_str)
+# Convert the data to YAML and print it
+os.system('mkdir conda')
+yaml_str = yaml.dump(data, sort_keys=False)
 
 with open('conda/meta.yaml', 'w') as f:
     f.write(yaml_str)
