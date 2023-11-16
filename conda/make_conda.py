@@ -5,6 +5,11 @@ import sys
 # Create an ordered dictionary for each section
 package = yaml.comments.CommentedMap()
 package['name'] = 'plasmidfinder'
+
+# Load your YAML content
+with open('conda/meta.yaml', 'w') as f:
+    f.write(yaml_str)
+
 source = yaml.comments.CommentedMap()
 source['url'] = 'https://bitbucket.org/genomicepidemiology/{}/get/2.1.6.tar.gz'.format(package['name'])
 
