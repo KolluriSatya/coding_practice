@@ -19,8 +19,8 @@ data = {
     "requirements": {
         "host": [
             "python >=3.5",
-            "wget",
-            "kma"
+            "kma",
+            "wget"
         ],
         "run": [
             "python >=3.5",
