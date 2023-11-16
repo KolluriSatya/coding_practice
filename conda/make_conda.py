@@ -4,7 +4,7 @@ import ruamel.yaml as yaml
 package = yaml.comments.CommentedMap()
 package['name'] = 'plasmidfinder'
 source = yaml.comments.CommentedMap()
-source['url'] = 'https://bitbucket.org/genomicepidemiology/{}/get/{}.tar.gz'.format(package['name'])
+source['url'] = 'https://bitbucket.org/genomicepidemiology/{}/get/2.1.6.tar.gz'.format(package['name'])
 
 build = yaml.comments.CommentedMap()
 build['number'] = 0
