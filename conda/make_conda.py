@@ -27,7 +27,8 @@ data = {
             "kma",
             "cgecore",
             "tabulate",
-            "biopython"
+            "biopython",
+            "blast"
         ]
     },
     "about": {
