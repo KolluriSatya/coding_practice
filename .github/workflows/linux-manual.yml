@@ -32,7 +32,6 @@ jobs:
       - name: build conda package
         run: |
           conda mambabuild conda -c conda-forge -c genomicepidemiology -c bioconda --output-folder .
-          python extract_tags.py
 
       - name: upload conda package
         run: |
