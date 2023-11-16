@@ -31,7 +31,17 @@ jobs:
 
       - name: build conda package
         run: |
-          conda mambabuild conda -c conda-forge -c bioconda --output-folder .
+          conda mambabuild conda -c conda-forge -c genomicepidemiology -c bioconda --output-folder .
+
+      - name: Get latest commit tag
+        id: get_tag
+        run: |
+            COMMIT_TAG=$(git describe --tags --abbrev=0)
+            echo "::set-output name=tag::$COMMIT_TAG"
+
+      - name: Create source package with commit tag
+        run: |
+            TAG=$(echo ${{ steps.get_tag.outputs.tag }})
 
       - name: upload conda package
         run: |
