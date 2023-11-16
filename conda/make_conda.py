@@ -24,11 +24,11 @@ data = {
         ],
         "run": [
             "python >=3.5",
+            "biopython",
             "kma >=1.4.9",
             "cgecore >=1.5.5",
             "tabulate >=0.7.7",
-            "biopython",
-            "blast"
+            "blast >=2.15.0"
         ]
     },
     "about": {
