@@ -9,7 +9,7 @@ data = {
         "version": "0.3.0"
     },
     "source": {
-        "url": "https://files.pythonhosted.org/packages/71/e5/0f3c76f148024cb4f97f3a219247b62f9d9c8c2ac09c45fa2f9d20c8fa12/blast-0.3.0.tar.gz",
+        "url": "https://bitbucket.org/genomicepidemiology/blaster/src/master/",
     },
     "build": {
         "number": 0,
