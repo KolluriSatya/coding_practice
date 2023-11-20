@@ -1,10 +1,8 @@
 on:
-  workflow_dispatch
-
-name: manual release linux
+  workflow_dispatch:
 
 jobs:
-  conda-linux:
+  conda-noarch:
     name: ${{ matrix.os }}
     runs-on: ${{ matrix.os }}
     defaults:
@@ -14,7 +12,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        os: [ linux-latest ]
+        os: [ ubuntu-latest ]
 
     steps:
       - name: checkout repository
@@ -24,19 +22,16 @@ jobs:
         run: |
           pip install PyYAML
           pip install ruamel.yaml
-          python conda/make_conda.py
-          cat conda/meta.yaml
+          python make_conda_linux.py
 
-      - name: build conda package
-        uses: mamba-org/setup-micromamba@v1
+      - uses: mamba-org/setup-micromamba@v1
         with:
           environment-file: envs/linux-build.yml
 
-      - name: build package
+      - name: build conda package
         run: |
-          conda mambabuild conda -c conda-forge -c genomicepidemiology --output-folder .
+          conda mambabuild conda -c conda-forge --output-folder .
 
       - name: upload conda package
         run: |
-          
-          anaconda -t ${{ secrets.SATYA_CONDA_AUTH_TOKEN }} upload --label main linux-64/*.tar.bz2
+          anaconda -t ${{ secrets.SATYA_CONDA_AUTH_TOKEN }} upload --label main noarch/*.tar.bz2
