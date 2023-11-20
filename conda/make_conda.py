@@ -14,7 +14,7 @@ data = {
     },
     "build": {
         "number": 0,
-        "noarch": "generic",
+        "noarch": "generic"
     },
     "requirements": {
         "host": [
