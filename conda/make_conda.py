@@ -19,13 +19,13 @@ data = {
     "requirements": {
         "host": [
             "python >=3.5",
-            "kma",
+            "kma >=1.4.9",
             "wget"
         ],
         "run": [
             "python >=3.5",
             "biopython",
-            "kma",
+            "kma >=1.4.9",
             "blast",
             "cgecore",
             "tabulate"
