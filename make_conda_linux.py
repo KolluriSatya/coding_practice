@@ -17,12 +17,10 @@ data = {
     },
     "requirements": {
         "host": [
-            "python",
-            "pip"
+            "python"
         ],
         "run": [
-            "python",
-            "pip"
+            "python"
         ]
     },
     "about": {
