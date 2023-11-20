@@ -18,12 +18,12 @@ data = {
     },
     "requirements": {
         "host": [
-            "python >=3.5",
+            "python",
             "kma",
             "wget"
         ],
         "run": [
-            "python >=3.5",
+            "python",
             "biopython",
             "kma",
             "blast",
