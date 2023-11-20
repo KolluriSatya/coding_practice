@@ -5,7 +5,7 @@ import sys
 sys.path = [os.path.join(os.path.dirname(os.path.realpath(__file__)), '')] + sys.path
 data = {
     "package": {
-        "name": "cgecore",
+        "name": "blast",
         "version": "0.3.0"
     },
     "source": {
