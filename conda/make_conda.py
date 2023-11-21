@@ -25,9 +25,9 @@ data = {
         "run": [
             "python",
             "biopython",
-            "kma",
             "blast",
             "cgecore",
+            "kma",
             "tabulate"
         ]
     },
