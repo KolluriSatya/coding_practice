@@ -19,13 +19,12 @@ data = {
     "requirements": {
         "host": [
             "python",
-            "zlib",
             "wget",
-            "kma"
+            "kma",
+            "blast"
         ],
         "run": [
             "python",
-            "zlib",
             "biopython",
             "blast",
             "kma",
