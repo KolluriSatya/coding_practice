@@ -24,11 +24,10 @@ data = {
         ],
         "run": [
             "python",
+            "kma",
             "biopython",
-            "zlib",
             "blast",
             "cgecore",
-            "kma",
             "tabulate"
         ]
     },
