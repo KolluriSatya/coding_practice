@@ -7,4 +7,3 @@ dependencies:
   - python
   - boa
   - anaconda-client
-  - blast
