@@ -19,7 +19,6 @@ data = {
     "requirements": {
         "host": [
             "python",
-            "zib",
             "kma",
             "wget"
         ],
