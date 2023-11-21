@@ -21,8 +21,7 @@ data = {
             "python",
             "wget",
             "kma",
-            "blast",
-            "ncbi-vdb"
+            "blast"
         ],
         "run": [
             "python",
@@ -30,8 +29,7 @@ data = {
             "tabulate",
             "kma",
             "cgecore",
-            "blast",
-            "ncbi-vdb"
+            "blast"
         ]
     },
     "about": {
