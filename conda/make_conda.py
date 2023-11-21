@@ -26,10 +26,10 @@ data = {
         "run": [
             "python",
             "biopython",
-            "blast",
+            "tabulate",
             "kma",
             "cgecore",
-            "tabulate"
+            "blast"
         ]
     },
     "about": {
