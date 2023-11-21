@@ -13,7 +13,8 @@ data = {
         "url": "https://github.com/genomicepidemiology/plasmidfinder/archive/refs/tags/2.1.6.tar.gz"
     },
     "build": {
-        "number": 0
+        "number": 0,
+        "noarch": "generic"
     },
     "requirements": {
         "host": [
