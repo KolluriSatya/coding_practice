@@ -20,16 +20,16 @@ data = {
         "host": [
             "python",
             "wget",
-            "kma==1.4.9",
-            "blast==2.15.0"
+            "kma",
+            "blast"
         ],
         "run": [
             "python",
             "biopython",
             "tabulate",
-            "kma==1.4.9",
+            "kma",
             "cgecore",
-            "blast==2.15.0"
+            "blast"
         ]
     },
     "about": {
