@@ -29,11 +29,14 @@ jobs:
         with:
           environment-file: envs/linux-build.yml
 
-      - name: build conda package
+      - name: Install dependencies
         run: |
           conda install -c bioconda blast
           conda install -c bioconda kma
-          conda mambabuild conda -c conda-forge -c bioconda --output-folder .
+
+      - name: Build conda package
+        run: |
+          conda mambabuild conda -c conda-forge --output-folder .
 
       - name: upload conda package
         run: |
