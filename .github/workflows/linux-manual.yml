@@ -31,9 +31,9 @@ jobs:
 
       - name: build conda package
         run: |
-          conda mambabuild conda -c conda-forge -c bioconda -c genomicepidemiology --output-folder .
           conda install -c bioconda blast
           conda install -c bioconda kma
+          conda mambabuild conda -c conda-forge -c bioconda --output-folder .
 
       - name: upload conda package
         run: |
